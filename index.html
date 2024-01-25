@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Criação de Logins - Atendimento Inteligente</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="icon" href="icons/logoAI_azul.png" type="image/png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+
+
+    
+        <div class="login-container">
+            
+            <img src="icons/logoAtendimentointeligente.png" width="250p" class="iconcadastro">
+         
+
+            
+     
+        <div class="usuarios-label">
+            <div class="input-field no-label">
+                <i class="material-icons">person</i>  
+                <input type="text" id="usuario" class="input-field" placeholder="Usuário">
+            </div>
+        </div>
+      
+    
+
+        <div class="prefixo-container">
+            <label for="prefixo">Prefixo:</label>
+            <select id="prefixo" class="input-field">
+                <option value="Dr.">Dr.</option>
+                <option value="Dra.">Dra.</option>
+                <option value="Nenhum">Recepção</option>
+            </select>
+        </div>
+        
+       
+
+        <div class="input-field no-label">
+            <i class="material-icons">apartment</i>
+             <input type="text" id="unidadeInput" class="input-field" placeholder="Unidade">
+             <div id="sugestoes"></div> 
+        </div>
+
+        
+
+        <div>
+            <div class="input-field no-label">
+                <i class="material-icons">email</i> 
+                <input type="text" id="email" placeholder="Email padrão" readonly>
+            </div>
+        </div>
+        
+        
+        
+        <div class="action-buttons">
+            <div>
+                <button onclick="adicionarLogin()">Adicionar Login</button>
+                <button onclick="excluirUltimoLogin()">Excluir Último</button>
+            </div>
+            <div>
+                
+                <button onclick="copiarLista()">Copiar Usuários</button>
+                <button onclick="limparUsuarios()">Limpar Lista</button>
+            </div>
+        </div>
+        
+
+
+        
+        <div class="login-list" id="listaLogins"></div>
+
+
+    </div>
+
+    
+
+    <script src="scripts/unidadesEmails.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

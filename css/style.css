@@ -1,0 +1,256 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(90deg, #1a237e, #1e88e5);
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.login-container {
+    background-color: aliceblue;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
+.prefixo-container {
+    width: 80%;
+}
+
+/* Icone da barra*/
+.iconcadastro{
+    padding: 10px;
+    padding-left: 17px;
+    width: 230px;
+}
+
+.login-item {
+    margin-bottom: 10px;
+}
+
+
+
+/* Estilo para o campo de email padrão com largura personalizada e ícone */
+.input-field.no-label {
+    position: relative;
+}
+
+.input-field.no-label i.material-icons {
+    position: absolute;
+    left: 0px;
+    top: 37%;
+    font-size: 22px;
+    transform: translateY(-50%);
+    color: rgb(119, 119, 119);
+}
+
+.input-field.no-label input#email {
+    width: 280px;
+    padding-left: 30px;
+}
+
+
+
+
+
+
+/* Estilo para lista de Unidades */
+
+#sugestoes {
+    max-height: 150px;
+    overflow-y: auto;
+    display: none;
+    position: absolute;
+    background-color: white;
+    color: black;
+    width: 100%;
+    border-radius: 2px;
+    border: 0px solid #ccc;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.6);
+    padding-left: 10px;
+    padding-top: 0px;
+    margin-top: -17px;
+    margin-left: -1px;
+    z-index: 1;
+
+}
+
+input[type="text"],
+select,
+#unidadeInput,
+#email,
+#usuario {
+    width: 100%;
+    padding: 7px;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 1.9px solid #ccc;
+    border-radius: 0px;
+    box-sizing: border-box;
+    background-color: transparent;
+    outline: none;
+    transition: border-bottom-color 1s ease;
+}
+
+
+/* Distância entre os componentes */
+.input-field.no-label {
+    margin-top: 10px; 
+}
+
+
+/*Estilo para animação ao selecionar campo*/
+input[type="text"]:focus,
+select:focus,
+#unidadeInput:focus,
+#email:focus,
+#usuario:focus,
+#material-icons:focus
+{
+    border-bottom-color: #1d83e0;
+    
+}
+
+/*Estilo para lista de unidades*/
+.sugestao {
+    padding: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+
+/* Estilo para botões da parte debaixo */
+button {
+    background-color: #1d83e0;
+    color: aliceblue;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin: 5px;
+    cursor: pointer;
+    display: block;
+    width: 150px;
+}
+
+
+
+/* Código para adicionar animação ao selecionar */
+input[type="text"]:focus::before,
+select:focus::before,
+#unidadeInput:focus::before,
+#email:focus::before,
+#usuario:focus::before,
+#material-icons::before
+{
+    content: "";
+    position: absolute;
+    left: 50%; 
+    bottom: 0;
+    width: 0; 
+    height: 2px; 
+    background-color: #1d83e0; 
+    transition: width 0.5s ease, left 0.5s ease; 
+    
+}
+
+/* Estilo para rótulo "Prefixo" */
+label[for="prefixo"] {
+    font-size: 14px; 
+}
+
+
+
+/* Estilo para campo Prefixo (select) */
+select#prefixo.input-field {
+    width:100%; 
+    
+    padding:  1px;
+    margin-bottom: 10px; 
+    border: none;
+    border-bottom: 1.9px solid #ccc;
+    border-radius: 0px;
+    box-sizing: border-box;
+    background-color: transparent;
+    outline: none;
+    transition: border-bottom-color 1s ease;
+}
+
+
+
+
+.login-item-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    max-width: 490px;
+}
+
+
+/* Configuração para unidades */
+div.login-container input#unidadeInput.input-field {
+    width: 279px;
+    font-size: 14px;
+    padding-top: 13px;
+    padding-left: 30px;
+    margin-bottom: 19px;
+}
+
+/* Configuração para usuários */
+div.login-container input#usuario.input-field {
+    width: 272px;
+    padding-top: 14px;
+    font-size: 14px;
+    margin-bottom: 19px;
+}
+
+
+
+/* Cor Prefixo e Email padrão */
+label {
+    color: #6c757d;
+}
+
+
+
+/* Configurações para lista de logins */
+.login-list {
+    background-color: aliceblue;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 80%;
+    color: #000000;
+    font-size: 14px;
+    float: right;
+    margin-top: 10px;
+    overflow-y: auto;
+    flex-direction: column-reverse;
+    max-height: 300px;
+}
+
+
+
+
+
