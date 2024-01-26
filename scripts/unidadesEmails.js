@@ -3,6 +3,7 @@ const unidadesEmails = [
     { unidade: "HBOL HOSPITAL DE OLHOS - GERAL", email: "hbol.com" },
     { unidade: "CLINICA NOSSA SAUDE - ARAPIRACA - GERAL", email: "nossasaude.com"},
     { unidade: "CLINC - GERAL", email: "clinc.com"},
+    { unidade: "PROVISÃO SUL - GERAL", email: "provisaofilial.com.br"},
     { unidade: "MEDICAL CENTER - GERAL", email: "medicalcenter.com"},
     { unidade: "LIVRE DIAGNÓSTICO - GERAL", email: "livrediagnostico.com"},
     { unidade: "FISIOMED - GERAL", email: "fisiomed.com"},
