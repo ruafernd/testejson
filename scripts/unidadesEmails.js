@@ -351,6 +351,7 @@ const unidadesEmails = [
     { unidade: "AMOR SAUDE ILHEUS - NE2", email: "asilheus.com" },
     { unidade: "AMOR SAUDE BARREIRAS - NE2", email: "asbarreiras.com" },
     { unidade: "AMOR SAUDE SAJ - NE2", email: "assaj.com" },
+    { unidade: "AMOR SAUDE VALENCA - NE2", email: "amsvalenca.com" },
     { unidade: "AMOR SAUDE PORTO SEGURO - NE2", email: "asportoseguro.com" },
     { unidade: "AMOR SAUDE ALAGOINHAS - NE2", email: "asalagoinhas.com" },
     { unidade: "AMOR SAUDE PAULO AFONSO - NE2", email: "aspauloafonso.com" },
