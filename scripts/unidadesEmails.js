@@ -335,18 +335,13 @@ const unidadesEmails = [
     { unidade: "AMOR SAUDE VITORIA DA CONQUISTA - BA", email: "amorsaudevc.com.br" },
     { unidade: "AMOR SAUDE SAO LUIZ (SERVIDOR LOCAL)", email: "amorsaudesaoluis.com" },
     { unidade: "AMOR SAUDE SJ DE RIBAMAR (SERVIDOR LOCAL)", email: "amorsaudesjribamar.com.br" },
-    { unidade: "AMOR SAUDE ARACAJU - NE2", email: "amorsaudearacaju.com" },
     { unidade: "AMOR SAUDE ITABUNA - BA", email: "asitabuna.com" },
     { unidade: "AMOR SAÚDE JUAZEIRO - BA", email: "amorsaudejuazeiro.com" },
-    { unidade: "AMOR SAUDE TERESINA - NE2", email: "amorsaudeteresina.com" },
     { unidade: "AMOR SAUDE SALVADOR - BA", email: "amorsaudesalvador.com" },
-    { unidade: "AMOR SAUDE TERESINA CENTRO - NE2", email: "amorsaudeteresinacentro.com" },
     { unidade: "AMOR SAUDE CAMACARI - BA", email: "amorsaudecamacari.com" },
     { unidade: "AMOR SAUDE TEIXEIRA DE FREITAS - BA", email: "amorsaudetfreitas.com.br" },
-    { unidade: "AMOR SAUDE IMPERATRIZ - NE2", email: "asimperatriz.com" },
     { unidade: "AMOR SAUDE FEIRA DE SANTANA - BA", email: "amorsaudefsantana.com.br" },
     { unidade: "AMOR SAUDE LAURO DE FREITAS - BA", email: "aslaurofreitas.com" },
-    { unidade: "AMOR SAUDE CAXIAS DO MARANHAO - NE2", email: "ascaxias.com" },
     { unidade: "AMOR SAUDE PARIPE - BA", email: "asparipe.com" },
     { unidade: "AMOR SAUDE ILHEUS - BA", email: "asilheus.com" },
     { unidade: "AMOR SAUDE BARREIRAS - BA", email: "asbarreiras.com" },
@@ -355,7 +350,6 @@ const unidadesEmails = [
     { unidade: "AMOR SAUDE PORTO SEGURO - BA", email: "asportoseguro.com" },
     { unidade: "AMOR SAUDE ALAGOINHAS - BA", email: "asalagoinhas.com" },
     { unidade: "AMOR SAUDE PAULO AFONSO - BA", email: "aspauloafonso.com" },
-    { unidade: "AMOR SAUDE PICOS - NE2", email: "amorsaudepicos.com" },
     { unidade: "AMOR SAUDE SIMOES FILHO - BA", email: "assfilho.com" },
     { unidade: "AMOR SAUDE JEQUIE - BA", email: "amorsaudejequie.com" },
     { unidade: "AMOR SAUDE IBIRAPUERA - BA", email: "asibirapuera.com" },
@@ -363,10 +357,16 @@ const unidadesEmails = [
     { unidade: "AMOR SAUDE SERRINHA - BA", email: "amorsaudeserrinha.com" },
     { unidade: "AMOR SAUDE ITABUNA CENTRO - BA", email: "asitabunacentro.com" },
     { unidade: "AMOR SAUDE GUANAMBI - BA", email: "asguanambi.com" },
-    { unidade: "AMOR SAUDE PARNAIBA - NE2", email: "asparnaiba.com" },
     { unidade: "AMOR SAUDE EUNAPOLIS - BA", email: "aseunapolis.com" },
-    { unidade: "AMOR SAUDE NOSSA SENHORA DO SOCORRO - NE2", email: "amorsaudenss.com" },
     { unidade: "AMOR SAUDE CABULA - BA", email: "amorsaudecabula.com" },
+    { unidade: "AMOR SAUDE NOSSA SENHORA DO SOCORRO - NE2", email: "amorsaudenss.com" },
+    { unidade: "AMOR SAUDE PARNAIBA - NE2", email: "asparnaiba.com" },
+    { unidade: "AMOR SAUDE PICOS - NE2", email: "amorsaudepicos.com" },
+    { unidade: "AMOR SAUDE CAXIAS DO MARANHAO - NE2", email: "ascaxias.com" },
+    { unidade: "AMOR SAUDE IMPERATRIZ - NE2", email: "asimperatriz.com" },
+    { unidade: "AMOR SAUDE TERESINA CENTRO - NE2", email: "amorsaudeteresinacentro.com" },
+    { unidade: "AMOR SAUDE TERESINA - NE2", email: "amorsaudeteresina.com" },
+    { unidade: "AMOR SAUDE ARACAJU - NE2", email: "amorsaudearacaju.com" },
     { unidade: "AMOR SAUDE PAULISTA - NE3", email: "amorsaudepaulista.com.br" },
     { unidade: "AMOR SAUDE OLINDA - NE3", email: "amorsaudeolinda.com.br" },
     { unidade: "AMOR SAUDE CAMARAGIBE - NE3", email: "amorsaudecamaragibe.com" },
@@ -419,3 +419,9 @@ const unidadesEmails = [
 
 
 ];
+
+
+
+
+
+
