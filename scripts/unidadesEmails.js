@@ -47,7 +47,6 @@ const unidadesEmails = [
     { unidade: "UNIVITTA CAMPOS SAUDE - GERAL", email: "univittacampos.com"},
     { unidade: "SICOOB JARAGUA - GERAL", email: "sicoob.com.br"},
     { unidade: "SICOOB ARAPIRACA - GERAL", email: "sicoob.com.br"},
-    { unidade: "SICOOB DELMIRO GOUVEIA - GERAL", email: "sicoob.com.br"},
     { unidade: "SICOOB MOSSORO - GERAL", email: "sicoobmossoro.com"},
     { unidade: "SICOOB ALECRIM - GERAL", email: "sicoob.com.br"},
     { unidade: "SICOOB JATIUCA - GERAL", email: "sicoob.com.br"},
