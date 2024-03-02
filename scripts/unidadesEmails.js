@@ -389,7 +389,7 @@ const unidadesEmails = [
     { unidade: "AMOR SAUDE ANAPOLIS ALEXANDRINA - CO", email: "amsalexandrina.com"},
     { unidade: "AMOR SAUDE CAMPO GRANDE - CO", email: "amorsaudecg.com.br" },
     { unidade: "AMOR SAUDE CUIABA - CO", email: "amorsaudecuiaba.com.br" },
-    { unidade: "AMOR SAUDE LUZIANIA - CO" email: "amsluziania.com"},
+    { unidade: "AMOR SAUDE LUZIANIA - CO", email: "amsluziania.com"},
     { unidade: "AMOR SAUDE SINOP - CO", email: "amorsaudesinop.com"},
     { unidade: "AMOR SAUDE GOIANIA SUL - CO", email: "amorsaudegs.com" },
     { unidade: "AMOR SAUDE SAMAMBAIA - CO", email: "amorsaudesamambaia.com" },
