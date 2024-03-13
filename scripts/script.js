@@ -135,7 +135,7 @@ function copiarLista() {
 
     let lista = "";
     for (let login of loginsDoutores) {
-        lista += `${login['Usuário']}\nEmail: ${login['Email']}\nSenha: ${login['Senha']}\n\n`;
+        lista += `-------------------------\n${login['Usuário']}\nEmail: ${login['Email']}\nSenha: ${login['Senha']}\n`;
     }
 
     lista = lista.slice(0, -2);
