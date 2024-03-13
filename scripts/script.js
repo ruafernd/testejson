@@ -134,14 +134,17 @@ function copiarLista() {
         return;
     }
 
-    let lista = "";
+    let lista = "-------------------------\n";
     for (let login of loginsDoutores) {
-        lista += `${login['Usuário']}\nEmail: ${login['Email']}\nSenha: ${login['Senha']}\n\n`;
+        lista += `${login['Usuário']}\nEmail: ${login['Email']}\nSenha: ${login['Senha']}\n-------------------------\n`;
     }
 
-    lista = lista.slice(0, -2);
+    // Remover os últimos 25 caracteres (linhas de separação e um caractere extra)
+    lista = lista.slice(0, -26);
     copyToClipboard(lista);
 }
+
+
 
 function copyToClipboard(text) {
     const el = document.createElement('textarea');
