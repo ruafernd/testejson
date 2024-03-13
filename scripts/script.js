@@ -77,7 +77,8 @@ function limparListaUsuarios() {
 }
 
 function adicionarLogin() {
-    const usuario = document.getElementById("usuario").value;
+    
+    const usuario = document.getElementById("usuario").value.trim(); 
     const prefixo = document.getElementById("prefixo").value;
 
     if (!usuario || (!prefixo && prefixo !== "Nenhum") || !unidadeSelecionada) {
