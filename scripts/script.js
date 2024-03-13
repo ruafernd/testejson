@@ -103,12 +103,12 @@ function adicionarLogin() {
     let emailFinal = "";
 
     if (prefixo !== "Nenhum") {
-        emailFinal = `${prefixo.toLowerCase().replace('.', '')}${removerAcentos(primeiroNome)}${primeiraLetraSegundoNome}@${removerAcentos(emailDominio)}`;
+        emailFinal = `${prefixo.toLowerCase().replace('.', '')}${removerAcentos(primeiroNome)}${removerAcentos(primeiraLetraSegundoNome)}@${removerAcentos(emailDominio)}`;
     } else {
-        emailFinal = `${removerAcentos(primeiroNome)}${primeiraLetraSegundoNome}@${removerAcentos(emailDominio)}`;
+        emailFinal = `${removerAcentos(primeiroNome)}${removerAcentos(primeiraLetraSegundoNome)}@${removerAcentos(emailDominio)}`;
     }
 
-    let senha = `${prefixo !== "Nenhum" ? prefixo.toLowerCase().replace('.', '') : ""}${removerAcentos(primeiroNome)}${primeiraLetraSegundoNome}`.toLowerCase();
+    let senha = `${prefixo !== "Nenhum" ? prefixo.toLowerCase().replace('.', '') : ""}${removerAcentos(primeiroNome)}${removerAcentos(primeiraLetraSegundoNome)}`.toLowerCase();
 
     loginsDoutores.push({"Usuário": nomeFormatado, "Senha": senha, "Email": emailFinal});
 
