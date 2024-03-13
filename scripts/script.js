@@ -78,7 +78,7 @@ function limparListaUsuarios() {
 
 function adicionarLogin() {
     
-    const usuario = document.getElementById("usuario").value.trim(); 
+    const usuario = document.getElementById("usuario").value.trim(); // Utilize trim() para remover espaços em branco no início e no final
     const prefixo = document.getElementById("prefixo").value;
 
     if (!usuario || (!prefixo && prefixo !== "Nenhum") || !unidadeSelecionada) {
@@ -103,12 +103,12 @@ function adicionarLogin() {
     let emailFinal = "";
 
     if (prefixo !== "Nenhum") {
-        emailFinal = `${prefixo.toLowerCase().replace('.', '')}${removerAcentos(primeiroNome)}${removerAcentos(primeiraLetraSegundoNome)}@${removerAcentos(emailDominio)}`;
+        emailFinal = `${prefixo.toLowerCase().replace('.', '')}${removerAcentos(primeiroNome)}${primeiraLetraSegundoNome}@${removerAcentos(emailDominio)}`;
     } else {
-        emailFinal = `${removerAcentos(primeiroNome)}${removerAcentos(primeiraLetraSegundoNome)}@${removerAcentos(emailDominio)}`;
+        emailFinal = `${removerAcentos(primeiroNome)}${primeiraLetraSegundoNome}@${removerAcentos(emailDominio)}`;
     }
 
-    let senha = `${prefixo !== "Nenhum" ? prefixo.toLowerCase().replace('.', '') : ""}${removerAcentos(primeiroNome)}${removerAcentos(primeiraLetraSegundoNome)}`.toLowerCase();
+    let senha = `${prefixo !== "Nenhum" ? prefixo.toLowerCase().replace('.', '') : ""}${removerAcentos(primeiroNome)}${primeiraLetraSegundoNome}`.toLowerCase();
 
     loginsDoutores.push({"Usuário": nomeFormatado, "Senha": senha, "Email": emailFinal});
 
@@ -136,7 +136,7 @@ function copiarLista() {
 
     let lista = "";
     for (let login of loginsDoutores) {
-        lista += `-------------------------\n${login['Usuário']}\nEmail: ${login['Email']}\nSenha: ${login['Senha']}\n`;
+        lista += `${login['Usuário']}\nEmail: ${login['Email']}\nSenha: ${login['Senha']}\n\n`;
     }
 
     lista = lista.slice(0, -2);
