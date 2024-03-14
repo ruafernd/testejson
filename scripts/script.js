@@ -76,9 +76,10 @@ function limparListaUsuarios() {
     atualizarListaLogins();
 }
 
+// Função para adicionar logins a lista
 function adicionarLogin() {
     
-    const usuario = document.getElementById("usuario").value.trim(); // Utilize trim() para remover espaços em branco no início e no final
+    const usuario = document.getElementById("usuario").value.trim(); 
     const prefixo = document.getElementById("prefixo").value;
 
     if (!usuario || (!prefixo && prefixo !== "Nenhum") || !unidadeSelecionada) {
@@ -119,6 +120,7 @@ function adicionarLogin() {
     document.getElementById("sugestoes").innerHTML = "";
 }
 
+// Função para excluir o Último usuário cadastrado
 function excluirUltimoLogin() {
     if (loginsDoutores.length === 0) {
         alert("Nenhum login para excluir.");
@@ -128,6 +130,7 @@ function excluirUltimoLogin() {
     atualizarListaLogins();
 }
 
+// Função para copiar lista e saída 
 function copiarLista() {
     if (loginsDoutores.length === 0) {
         alert("Nenhum login foi adicionado ainda.");
@@ -146,6 +149,7 @@ function copiarLista() {
 
 
 
+// Função para copiar Usuários
 function copyToClipboard(text) {
     const el = document.createElement('textarea');
     el.value = text;
@@ -156,20 +160,6 @@ function copyToClipboard(text) {
     alert('Lista de logins copiada para a área de transferência.');
 }
 
-function criarBlocoNotas() {
-    if (loginsDoutores.length === 0) {
-        alert("Nenhum login foi adicionado ainda.");
-        return;
-    }
-
-    let lista = "";
-    for (let login of loginsDoutores) {
-        lista += `${login['Usuário']}\nEmail: ${login['Email']}\nSenha: ${login['Senha']}\n\n`;
-    }
-
-    lista = lista.slice(0, -2);
-    downloadFile("Logins.txt", lista);
-}
 
 
 function atualizarListaLogins() {
