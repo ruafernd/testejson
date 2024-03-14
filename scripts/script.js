@@ -137,9 +137,9 @@ function copiarLista() {
         return;
     }
 
-    let lista = "-------------------------\n";
+    let lista = "-----------\n";
     for (let login of loginsDoutores) {
-        lista += `${login['Usuário']}\nEmail: ${login['Email']}\nSenha: ${login['Senha']}\n-------------------------\n`;
+        lista += `${login['Usuário']}\nEmail: ${login['Email']}\nSenha: ${login['Senha']}\n-----------\n`;
     }
 
     // Remover os últimos 25 caracteres (linhas de separação e um caractere extra)
