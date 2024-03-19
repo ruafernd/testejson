@@ -247,7 +247,8 @@ label {
     margin-top: 10px;
     overflow-y: auto;
     flex-direction: column-reverse;
-    max-height: 300px;
+    
+    max-height: 100px;
 }
 
 
