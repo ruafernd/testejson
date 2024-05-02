@@ -159,6 +159,7 @@ const unidadesEmails = [
     { unidade: "AMOR SAUDE IPIRANGA - SP3", email: "amorsaudeipiranga.com" },
     { unidade: "AMOR SAUDE NOVO HAMBURGO - SUL", email: "amsnovohamburgo.com"},
     { unidade: "AMOR SAUDE FOZ - SUL", email: "amsfozdoiguacu.com"},
+    { unidade: "AMOR SAUDE PIRAQUARA - SUL", email: "amspiraquara.com" },
     { unidade: "AMOR SAUDE VIAMAO - SUL", email: "amorsaudeviamao.com" },
     { unidade: "AMOR SAUDE SAO JOSE - SUL", email: "amorsaudesaojose.com" },
     { unidade: "AMOR SAUDE FLORIANOPOLIS - SUL", email: "amorsaudeflorianopolis.com" },
