@@ -131,6 +131,21 @@ select:focus,
     font-size: 14px;
 }
 
+.login-item .material-icons {
+    font-size: 16px; /* Altere o tamanho conforme necessário */
+}
+
+.user-info-container {
+    display: flex;
+    align-items: center;
+}
+
+.copy-icon {
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+
 
 /* Estilo para botões da parte debaixo */
 button {

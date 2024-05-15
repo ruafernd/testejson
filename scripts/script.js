@@ -90,9 +90,9 @@ function adicionarLogin() {
     let nomeFormatado = "";
 
     if (prefixo !== "Nenhum") {
-        nomeFormatado = `*Usuário: ${formatarNomePrimeiraLetraMaiuscula(prefixo)} ${formatarNomePrimeiraLetraMaiuscula(usuario)}*`;
+        nomeFormatado = `${formatarNomePrimeiraLetraMaiuscula(prefixo)} ${formatarNomePrimeiraLetraMaiuscula(usuario)}`;
     } else {
-        nomeFormatado = `*Usuário: ${formatarNomePrimeiraLetraMaiuscula(usuario)}*`;
+        nomeFormatado = `${formatarNomePrimeiraLetraMaiuscula(usuario)}`;
     }
 
     let partesNome = usuario.split(' ');
@@ -139,7 +139,7 @@ function copiarLista() {
 
     let lista = "---------------\n";
     for (let login of loginsDoutores) {
-        lista += `${login['Usuário']}\nEmail: ${login['Email']}\nSenha: ${login['Senha']}\n---------------\n`;
+        lista += `Usuário: *${login['Usuário']}*\nEmail: ${login['Email']}\nSenha: ${login['Senha']}\n---------------\n`;
     }
 
     // Remover os últimos 25 caracteres (linhas de separação e um caractere extra)
@@ -161,7 +161,6 @@ function copyToClipboard(text) {
 }
 
 
-
 function atualizarListaLogins() {
     const listaLogins = document.getElementById("listaLogins");
     listaLogins.innerHTML = "";
@@ -169,10 +168,69 @@ function atualizarListaLogins() {
     for (let login of loginsDoutores) {
         let loginItem = document.createElement("div");
         loginItem.classList.add("login-item");
-        loginItem.innerHTML = `${login['Usuário']}<br>Email: ${login['Email']}<br>Senha: ${login['Senha']}<br>`;
+
+        let usuarioInfo = document.createElement("div");
+        usuarioInfo.textContent = `Usuário: ${login['Usuário']}`;
+
+        let copyUsuarioIcon = document.createElement("span");
+        copyUsuarioIcon.classList.add("material-icons");
+        copyUsuarioIcon.classList.add("copy-icon");
+        copyUsuarioIcon.textContent = "content_copy";
+        copyUsuarioIcon.addEventListener("click", function() {
+            copyToClipboard(login['Usuário']);
+        });
+
+        let emailInfo = document.createElement("div");
+        emailInfo.textContent = `Email: ${login['Email']}`;
+
+        let copyEmailIcon = document.createElement("span");
+        copyEmailIcon.classList.add("material-icons");
+        copyEmailIcon.classList.add("copy-icon");
+        copyEmailIcon.textContent = "content_copy";
+        copyEmailIcon.addEventListener("click", function() {
+            copyToClipboard(login['Email']);
+        });
+
+        let senhaInfo = document.createElement("div");
+        senhaInfo.textContent = `Senha: ${login['Senha']}`;
+
+        let copySenhaIcon = document.createElement("span");
+        copySenhaIcon.classList.add("material-icons");
+        copySenhaIcon.classList.add("copy-icon");
+        copySenhaIcon.textContent = "content_copy";
+        copySenhaIcon.addEventListener("click", function() {
+            copyToClipboard(login['Senha']);
+        });
+
+        let userInfoContainer = document.createElement("div");
+        userInfoContainer.classList.add("user-info-container");
+        userInfoContainer.appendChild(usuarioInfo);
+        userInfoContainer.appendChild(copyUsuarioIcon);
+
+        let emailInfoContainer = document.createElement("div");
+        emailInfoContainer.classList.add("user-info-container");
+        emailInfoContainer.appendChild(emailInfo);
+        emailInfoContainer.appendChild(copyEmailIcon);
+
+        let senhaInfoContainer = document.createElement("div");
+        senhaInfoContainer.classList.add("user-info-container");
+        senhaInfoContainer.appendChild(senhaInfo);
+        senhaInfoContainer.appendChild(copySenhaIcon);
+
+        loginItem.appendChild(userInfoContainer);
+        loginItem.appendChild(emailInfoContainer);
+        loginItem.appendChild(senhaInfoContainer);
+
+        // Adiciona a linha de separação
+        let linhaSeparacao = document.createElement("hr");
+        listaLogins.appendChild(linhaSeparacao);
+
         listaLogins.appendChild(loginItem);
     }
 }
+
+
+
 
 function formatarNomePrimeiraLetraMaiuscula(nome) {
     return nome.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
