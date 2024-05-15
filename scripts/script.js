@@ -157,7 +157,7 @@ function copyToClipboard(text) {
     el.select();
     document.execCommand('copy');
     document.body.removeChild(el);
-    alert('Lista de logins copiada para a área de transferência.');
+    
 }
 
 
