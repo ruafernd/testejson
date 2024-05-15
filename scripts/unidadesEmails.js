@@ -245,6 +245,7 @@ const unidadesEmails = [
     { unidade: "AMOR SAUDE VIANA - ES", email: "amsviana.com" },
     { unidade: "AMOR SAUDE SERRA SEDE - ES", email: "amsserrasede.com" },
     { unidade: "AMOR SAUDE VARGINHA - MG", email: "asvarginha.com"},
+    { unidade: "AMOR SAUDE VALE DO ACO - MG", email: "amorsaudeva.com"},
     { unidade: "AMOR SAUDE PASSOS - MG", email: "amorsaudepassos.com"},
     { unidade: "AMOR SAUDE CLINICA SAO JOSE MONTES CLAROS - MG", email: "amorsaudemc.com.br" },
     { unidade: "AMOR SAUDE RIBEIRAO DAS NEVES - MG", email: "amorsaudeneves.com" },
