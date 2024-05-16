@@ -145,6 +145,9 @@ select:focus,
     cursor: pointer;
 }
 
+.material-icons.check-icon {
+    color: green; /* ou qualquer cor que você preferir */
+}
 
 
 

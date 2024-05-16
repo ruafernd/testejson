@@ -149,8 +149,7 @@ function copiarLista() {
 
 
 
-// Função para copiar Usuários
-function copyToClipboard(text) {
+function copyToClipboard(text, iconElement) {
     const el = document.createElement('textarea');
     el.value = text;
     document.body.appendChild(el);
@@ -158,6 +157,15 @@ function copyToClipboard(text) {
     document.execCommand('copy');
     document.body.removeChild(el);
     
+    // Mudar ícone para "check"
+    iconElement.textContent = "check";
+    iconElement.classList.add("check-icon");
+    
+    // Voltar ao ícone original após 2 segundos
+    setTimeout(() => {
+        iconElement.textContent = "content_copy";
+        iconElement.classList.remove("check-icon");
+    }, 2000);
 }
 
 
@@ -177,7 +185,7 @@ function atualizarListaLogins() {
         copyUsuarioIcon.classList.add("copy-icon");
         copyUsuarioIcon.textContent = "content_copy";
         copyUsuarioIcon.addEventListener("click", function() {
-            copyToClipboard(login['Usuário']);
+            copyToClipboard(login['Usuário'], copyUsuarioIcon);
         });
 
         let emailInfo = document.createElement("div");
@@ -188,7 +196,7 @@ function atualizarListaLogins() {
         copyEmailIcon.classList.add("copy-icon");
         copyEmailIcon.textContent = "content_copy";
         copyEmailIcon.addEventListener("click", function() {
-            copyToClipboard(login['Email']);
+            copyToClipboard(login['Email'], copyEmailIcon);
         });
 
         let senhaInfo = document.createElement("div");
@@ -199,7 +207,7 @@ function atualizarListaLogins() {
         copySenhaIcon.classList.add("copy-icon");
         copySenhaIcon.textContent = "content_copy";
         copySenhaIcon.addEventListener("click", function() {
-            copyToClipboard(login['Senha']);
+            copyToClipboard(login['Senha'], copySenhaIcon);
         });
 
         let userInfoContainer = document.createElement("div");
@@ -228,6 +236,7 @@ function atualizarListaLogins() {
         listaLogins.appendChild(loginItem);
     }
 }
+
 
 
 
