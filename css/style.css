@@ -138,7 +138,10 @@ select:focus,
 .user-info-container {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
+
+
 
 .copy-icon {
     margin-left: 5px;
