@@ -78,7 +78,7 @@ const unidadesEmails = [
     { unidade: "ENDOVIDEO - GERAL2", email: "endovideo.com"},
     { unidade: "PULSE VIDA SAUDE - GERAL2", email: "pulsevida.com"},
     { unidade: "CENTRO DE SAÚDE NOVA ESPERANÇA - GERAL2", email: "facene.com"},
-    { unidade: "CENTRO DE SAÚDE NOVA ESPERANÇA (ODONTO) - GERAL2", email: "faceneodonto.com"},
+    { unidade: "CENTRO DE SAÚDE NOVA ESPERANÇA (ESCOLA) - GERAL2", email: "faceneescola.com"},
     { unidade: "FACULDADE FACENE - GERAL2", email: "faculdadefacene.com"},
     { unidade: "MAIS PET CAMPINAS - GERAL2", email: "maispetcampinas.com"},
     { unidade: "MAIS PET BRASILIA - GERAL2", email: "maispetbrasilia.com"},
