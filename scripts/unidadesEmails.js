@@ -307,6 +307,7 @@ const unidadesEmails = [
     { unidade: "CARTAO DE TODOS SAO GONCALO - NORTE", email: "cartaosgoncalo.com"},
     { unidade: "CARTAO DE TODOS CAMPINA GRANDE - NORTE", email: "ctcampinagrande.com"},
     { unidade: "CARTÃO DE TODOS MOGI DAS CRUZES - NORTE", email: "ctmogi.com"},
+    { unidade: "CARTÃO DE TODOS CARAGUATATUBA - NORTE", email: "ctcaraguatatuba.com"},
     { unidade: "CARTÃO DE TODOS VOLTA REDONDA - NORTE", email: "ctvoltaredonda.com"},
     { unidade: "CARTAO DE TODOS PIRITUBA FILIAL 2 - NORTE", email: "cartaodetodos.com"},
     { unidade: "CARTAO DE TODOS NOVO HAMBURGO - NORTE", email: "ctnovohamburgo.com"},
