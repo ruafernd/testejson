@@ -116,7 +116,6 @@ const unidadesEmails = [
     { unidade: "AMOR SAUDE PRESIDENTE PRUDENTE - SP", email: "amorsaudepprudente.com" },
     { unidade: "AMOR SAUDE ITAQUAQUECETUBA - SP", email: "amorsaudeitaqua.com" },
     { unidade: "AMOR SAUDE FRANCISCO MORATO - SP", email: "asfmorato.com" },
-    { unidade: "AMOR SAUDE VARZEA PAULISTA - SP", email: "asvpaulista.com" },
     { unidade: "AMOR SAUDE GRAJAU (SERVIDOR LOCAL)", email: "asgrajau.com" },
     { unidade: "AMOR SAUDE BOTUCATU - SP", email: "asbotucatu.com" },
     { unidade: "AMOR SAUDE TUPA - SP2", email: "amorsaudetupa.com" },
