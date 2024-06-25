@@ -97,7 +97,7 @@ const unidadesEmails = [
     { unidade: "AMOR SAUDE CAPELA DO SOCORRO - SP", email: "ascapela.com.br" },
     { unidade: "AMOR SAUDE TATUI - SP", email: "amorsaudetatui.com" },
     { unidade: "AMOR SAUDE JABAQUARA - SP", email: "amorsaudejabaquara.com" },
-    { unidade: "TOTAL SAUDE JUNDIAI (SERVIDOR LOCAL)", email: "amorsaudejundiai.com" },
+    { unidade: "TOTL SAUDE JUNDIAI (SERVIDOR LOCAL)", email: "amorsaudejundiai.com" },
     { unidade: "AMOR SAUDE MBOI MIRIM - SP", email: "amorsaudemboimirim.com"},
     { unidade: "AMOR SAUDE SAO JOSE DO RIO PRETO - SP", email: "amorsaudesjriopreto.com" },
     { unidade: "AMOR SAUDE ITAIM PAULISTA - SP", email: "amorsaudeitaim.com" },
