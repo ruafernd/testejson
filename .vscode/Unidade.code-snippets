@@ -1,0 +1,9 @@
+{
+    "Unidade e Email": {
+        "prefix": "ue",
+        "body": [
+            "{ unidade: \"$1\", email: \"$2\"},"
+        ],
+        "description": "Snippet para unidade e email"
+    }
+}
