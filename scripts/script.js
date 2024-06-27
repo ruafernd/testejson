@@ -38,27 +38,28 @@ document.body.addEventListener("click", function (event) {
 const unidadeInput = document.getElementById("unidadeInput");
 unidadeInput.addEventListener("input", function () {
     const sugestoes = document.getElementById("sugestoes");
-    sugestoes.innerHTML = "";
-
+    sugestoes.innerHTML = ""; // Limpa as sugestões anteriores
     
-    const textoInput = unidadeInput.value.toLowerCase();
-    for (const unidade of unidades) {
-        const unidadeMinuscula = unidade.toLowerCase();
-        if (unidadeMinuscula.includes(textoInput)) {
+    const textoInput = unidadeInput.value.toLowerCase(); // Captura o texto digitado pelo usuário
+    for (const item of unidadesEmails) {
+        const unidadeMinuscula = item.unidade.toLowerCase();
+        const emailMinusculo = item.email.toLowerCase();
+        if (unidadeMinuscula.includes(textoInput) || emailMinusculo.includes(textoInput)) { // Verifica se o texto digitado está contido no nome da unidade ou no email
             const sugestao = document.createElement("div");
             sugestao.classList.add("sugestao");
-            sugestao.textContent = unidade;
+            sugestao.textContent = `${item.unidade} `; // Define o texto da sugestão para incluir unidade e email
             sugestao.addEventListener("click", function () {
-                unidadeInput.value = unidade;
-                sugestoes.innerHTML = "";
-                selecionarUnidade(unidade);
-                limparListaUsuarios();
+                unidadeInput.value = item.unidade; // Preenche o campo de entrada com o nome da unidade
+                sugestoes.innerHTML = ""; // Limpa as sugestões após a seleção
+                selecionarUnidade(item.unidade); // Chama a função para selecionar a unidade
+                limparListaUsuarios(); // Limpa a lista de usuários
             });
-            sugestoes.appendChild(sugestao);
+            sugestoes.appendChild(sugestao); 
         }
     }
-    sugestoes.style.display = sugestoes.childNodes.length > 0 ? "block" : "none";
+    sugestoes.style.display = sugestoes.childNodes.length > 0 ? "block" : "none"; // Exibe ou oculta as sugestões conforme necessário
 });
+
 
 const loginsDoutores = [];
 
