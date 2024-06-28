@@ -40,33 +40,28 @@ unidadeInput.addEventListener("input", function () {
     const sugestoes = document.getElementById("sugestoes");
     sugestoes.innerHTML = ""; // Limpa as sugestões anteriores
     
-    const textoInput = unidadeInput.value.toLowerCase(); // Captura o texto digitado pelo usuário
+    const textoInput = unidadeInput.value.toLowerCase().trim(); // Captura o texto digitado pelo usuário, removendo espaços em branco extras
 
-    // Função para normalizar o CNPJ removendo caracteres não numéricos
-    function normalizarCNPJ(cnpj) {
-        return cnpj.replace(/[^\d]/g, );
-    }
-
-    const textoInputNormalizado = normalizarCNPJ(textoInput);
-
-    for (const item of unidadesEmails) {
+    unidadesEmails.forEach(item => {
         const unidadeMinuscula = item.unidade.toLowerCase();
         const emailMinusculo = item.email.toLowerCase();
-        const cnpjMinusculo = item.cnpj ? normalizarCNPJ(item.cnpj.toLowerCase()) : ""; // Normaliza o CNPJ
-        
-        if (unidadeMinuscula.includes(textoInput) || emailMinusculo.includes(textoInput) || cnpjMinusculo.includes(textoInputNormalizado)) { // Verifica se o texto digitado está contido no nome da unidade, no email ou no CNPJ normalizado
+        const cnpjFormatado = item.cnpj ? item.cnpj.replace(/[./]/g, "") : ""; // Remove apenas os caracteres . e / do CNPJ para comparação
+
+        // Verifica se o texto digitado está contido no nome da unidade, no email ou no CNPJ
+        if (unidadeMinuscula.includes(textoInput) || emailMinusculo.includes(textoInput) || cnpjFormatado.includes(textoInput.replace(/[./]/g, ""))) {
             const sugestao = document.createElement("div");
             sugestao.classList.add("sugestao");
-            sugestao.textContent = `${item.unidade}`; // Define o texto da sugestão para incluir unidade e email
+            sugestao.textContent = `${item.unidade}`; // Define o texto da sugestão para incluir unidade, email e cnpj
             sugestao.addEventListener("click", function () {
                 unidadeInput.value = item.unidade; // Preenche o campo de entrada com o nome da unidade
                 sugestoes.innerHTML = ""; // Limpa as sugestões após a seleção
                 selecionarUnidade(item.unidade); // Chama a função para selecionar a unidade
                 limparListaUsuarios(); // Limpa a lista de usuários
             });
-            sugestoes.appendChild(sugestao); 
+            sugestoes.appendChild(sugestao);
         }
-    }
+    });
+
     sugestoes.style.display = sugestoes.childNodes.length > 0 ? "block" : "none"; // Exibe ou oculta as sugestões conforme necessário
 });
 
