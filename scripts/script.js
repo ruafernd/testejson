@@ -35,6 +35,7 @@ document.body.addEventListener("click", function (event) {
     }
 });
 
+
 const unidadeInput = document.getElementById("unidadeInput");
 unidadeInput.addEventListener("input", function () {
     const sugestoes = document.getElementById("sugestoes");
@@ -47,14 +48,13 @@ unidadeInput.addEventListener("input", function () {
         return cnpj.replace(/[^\d]/g, "");
     }
 
-    const textoInputNormalizado = normalizarCNPJ(textoInput);
-
     for (const item of unidadesEmails) {
         const unidadeMinuscula = item.unidade.toLowerCase();
         const emailMinusculo = item.email.toLowerCase();
-        const cnpjMinusculo = item.cnpj ? normalizarCNPJ(item.cnpj.toLowerCase()) : ""; // Normaliza o CNPJ
-        
-        if (unidadeMinuscula.includes(textoInput) || emailMinusculo.includes(textoInput) || cnpjMinusculo.includes(textoInputNormalizado)) { // Verifica se o texto digitado está contido no nome da unidade, no email ou no CNPJ normalizado
+        const cnpjMinusculo = item.cnpj ? normalizarCNPJ(item.cnpj) : ""; // Normaliza o CNPJ
+
+        // Verifica se o texto digitado está contido no nome da unidade, no email ou no CNPJ normalizado
+        if (unidadeMinuscula.includes(textoInput) || emailMinusculo.includes(textoInput) || cnpjMinusculo.includes(textoInput)) { 
             const sugestao = document.createElement("div");
             sugestao.classList.add("sugestao");
             sugestao.textContent = `${item.unidade}`; // Define o texto da sugestão para incluir unidade e email
@@ -69,6 +69,7 @@ unidadeInput.addEventListener("input", function () {
     }
     sugestoes.style.display = sugestoes.childNodes.length > 0 ? "block" : "none"; // Exibe ou oculta as sugestões conforme necessário
 });
+
 
 
 const loginsDoutores = [];
