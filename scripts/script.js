@@ -41,13 +41,23 @@ unidadeInput.addEventListener("input", function () {
     sugestoes.innerHTML = ""; // Limpa as sugestões anteriores
     
     const textoInput = unidadeInput.value.toLowerCase(); // Captura o texto digitado pelo usuário
+
+    // Função para normalizar o CNPJ removendo caracteres não numéricos
+    function normalizarCNPJ(cnpj) {
+        return cnpj.replace(/[^\d]/g, "");
+    }
+
+    const textoInputNormalizado = normalizarCNPJ(textoInput);
+
     for (const item of unidadesEmails) {
         const unidadeMinuscula = item.unidade.toLowerCase();
         const emailMinusculo = item.email.toLowerCase();
-        if (unidadeMinuscula.includes(textoInput) || emailMinusculo.includes(textoInput)) { // Verifica se o texto digitado está contido no nome da unidade ou no email
+        const cnpjMinusculo = item.cnpj ? normalizarCNPJ(item.cnpj.toLowerCase()) : ""; // Normaliza o CNPJ
+        
+        if (unidadeMinuscula.includes(textoInput) || emailMinusculo.includes(textoInput) || cnpjMinusculo.includes(textoInputNormalizado)) { // Verifica se o texto digitado está contido no nome da unidade, no email ou no CNPJ normalizado
             const sugestao = document.createElement("div");
             sugestao.classList.add("sugestao");
-            sugestao.textContent = `${item.unidade} `; // Define o texto da sugestão para incluir unidade e email
+            sugestao.textContent = `${item.unidade}`; // Define o texto da sugestão para incluir unidade e email
             sugestao.addEventListener("click", function () {
                 unidadeInput.value = item.unidade; // Preenche o campo de entrada com o nome da unidade
                 sugestoes.innerHTML = ""; // Limpa as sugestões após a seleção
