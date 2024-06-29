@@ -149,7 +149,7 @@ const unidadesEmails = [
     { unidade: "AMOR SAUDE CAMPINAS SUDOESTE - SP2", email: "ascampinassudoeste.com", cnpj: "26.945.705/0001-75"},
     { unidade: "AMOR SAUDE VILA ANDRADE - SP2", email: "asvilaandrade.com", cnpj: "42.365.789/0001-24"},
     { unidade: "AMOR SAUDE SAPOPEMBA - SP2", email: "assapopemba.com", cnpj: "26.412.493/0001-60"},
-    { unidade: "AMOR SAUDE PIMENTAS - SP2", email: "ascumbica.com", cnpj: "14.650.152/0002-25"},
+    { unidade: "AMOR SAUDE PIMENTAS - SP2", email: "ascumbica.com", cnpj: "14.650.152/0002-25", cnpj2: "14.50.152/0002-25"},
     { unidade: "PET DE TODOS VILA AMERICANA - SP2", email: "petdetodosamericana.com", cnpj: "43.441.855/0001-60"},
     { unidade: "AMOR SAUDE VILA NOVA DE ITAPEVI - SP2", email: "asvnitapevi.com", cnpj: "21.866.414/0001-78"},
     { unidade: "AMOR SAUDE FRANCO DA ROCHA - SP2", email: "asfrancodarocha.com", cnpj: "28.590.525/0001-43"},

@@ -46,9 +46,10 @@ unidadeInput.addEventListener("input", function () {
         const unidadeMinuscula = item.unidade.toLowerCase();
         const emailMinusculo = item.email.toLowerCase();
         const cnpjFormatado = item.cnpj ? item.cnpj.replace(/[./]/g, "") : ""; // Remove apenas os caracteres . e / do CNPJ para comparação
+        const cnpj2Formatado = item.cnpj2 ? item.cnpj2.replace(/[./]/g, "") : "";
 
         // Verifica se o texto digitado está contido no nome da unidade, no email ou no CNPJ
-        if (unidadeMinuscula.includes(textoInput) || emailMinusculo.includes(textoInput) || cnpjFormatado.includes(textoInput.replace(/[./]/g, ""))) {
+        if (unidadeMinuscula.includes(textoInput) || emailMinusculo.includes(textoInput) || cnpjFormatado.includes(textoInput.replace(/[./]/g, "")) || cnpj2Formatado.includes(textoInput.replace(/[./]/g, "")) ) {
             const sugestao = document.createElement("div");
             sugestao.classList.add("sugestao");
             sugestao.textContent = `${item.unidade}`; // Define o texto da sugestão para incluir unidade, email e cnpj
