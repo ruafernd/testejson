@@ -1,5 +1,5 @@
 const unidadesEmails = [
-    { unidade: "AMAR SAUDE - GERAL", email: "amarsaudepa.com", cnpj: "37.286.033/0001-50"},
+    { unidade: "AMAR SAUDE - GERAL", email: "amarsaudepa.com", cnpj: "37.286.033/0001-50",},
     { unidade: "HBOL HOSPITAL DE OLHOS - GERAL", email: "hbol.com", cnpj: "06.101.061/0002-02"},
     { unidade: "CLINICA NOSSA SAUDE - ARAPIRACA - GERAL", email: "nossasaude.com", cnpj: "47.195.616/0001-29"},
     { unidade: "CLINC - GERAL", email: "clinc.com", cnpj: "28.573.361/0001-46"},

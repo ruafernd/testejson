@@ -123,7 +123,6 @@ function adicionarLogin() {
     atualizarListaLogins();
 
     document.getElementById("usuario").value = "";
-    document.getElementById("unidadeInput").value = "";
     document.getElementById("sugestoes").innerHTML = "";
 }
 
@@ -144,13 +143,13 @@ function copiarLista() {
         return;
     }
 
-    let lista = "---------------\n";
+    let lista = "*---------------*\n";
     for (let login of loginsDoutores) {
-        lista += `Usuário: *${login['Usuário']}*\nEmail: ${login['Email']}\nSenha: ${login['Senha']}\n---------------\n`;
+        lista += `*Usuário: ${login['Usuário']}*\nEmail: ${login['Email']}\nSenha: ${login['Senha']}\n*---------------*\n`;
     }
 
     // Remover os últimos 25 caracteres (linhas de separação e um caractere extra)
-    lista = lista.slice(0, -16);
+    lista = lista.slice(0, -18);
     copyToClipboard(lista);
 }
 
