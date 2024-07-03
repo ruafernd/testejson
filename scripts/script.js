@@ -26,8 +26,6 @@ document.getElementById("usuario").addEventListener("keydown", function (event) 
     }
 });
 
-
-
 document.body.addEventListener("click", function (event) {
     const sugestoes = document.getElementById("sugestoes");
     if (sugestoes.style.display === "block" && event.target !== unidadeInput) {
@@ -66,7 +64,6 @@ unidadeInput.addEventListener("input", function () {
     sugestoes.style.display = sugestoes.childNodes.length > 0 ? "block" : "none"; // Exibe ou oculta as sugestões conforme necessário
 });
 
-
 const loginsDoutores = [];
 
 function selecionarUnidade(unidade) {
@@ -75,8 +72,8 @@ function selecionarUnidade(unidade) {
     const dominio = obterDominioEmail(unidadeSelecionada);
     emailInput.value = dominio;
     limparListaUsuarios();
-}ListaUsuarios();
-
+    atualizarListaLogins();
+}
 
 function limparListaUsuarios() {
     loginsDoutores.length = 0;
@@ -85,7 +82,6 @@ function limparListaUsuarios() {
 
 // Função para adicionar logins a lista
 function adicionarLogin() {
-    
     const usuario = document.getElementById("usuario").value.trim(); 
     const prefixo = document.getElementById("prefixo").value;
 
@@ -126,7 +122,7 @@ function adicionarLogin() {
     document.getElementById("sugestoes").innerHTML = "";
 }
 
-// Função para excluir o Último usuário cadastrado
+// Função para excluir o último usuário cadastrado
 function excluirUltimoLogin() {
     if (loginsDoutores.length === 0) {
         alert("Nenhum login para excluir.");
@@ -153,8 +149,6 @@ function copiarLista() {
     copyToClipboard(lista);
 }
 
-
-
 function copyToClipboard(text, iconElement) {
     const el = document.createElement('textarea');
     el.value = text;
@@ -174,12 +168,80 @@ function copyToClipboard(text, iconElement) {
     }, 2000);
 }
 
+// Adicione as variáveis para o modal e seus elementos
+const modal = document.getElementById("editModal");
+const span = document.getElementsByClassName("close")[0];
+const saveEditButton = document.getElementById("saveEdit");
+let editIndex = -1;
+
+// Função para abrir o modal e preencher os campos com os dados existentes
+function editarLogin(index) {
+    editIndex = index;
+    const login = loginsDoutores[index];
+
+    document.getElementById("editUsuario").value = login['Usuário'];
+    document.getElementById("editEmail").value = login['Email'];
+    document.getElementById("editSenha").value = login['Senha'];
+
+    modal.style.display = "block";
+}
+
+// Quando o usuário clicar em (x), fecha o modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// Quando o usuário clicar fora do modal, fecha o modal
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+// Salvar alterações e atualizar a lista
+saveEditButton.addEventListener("click", function() {
+    if (editIndex !== -1) {
+        const usuario = document.getElementById("editUsuario").value.trim();
+        const email = document.getElementById("editEmail").value.trim();
+        const senha = document.getElementById("editSenha").value.trim();
+
+        loginsDoutores[editIndex]['Usuário'] = usuario;
+        loginsDoutores[editIndex]['Email'] = email;
+        loginsDoutores[editIndex]['Senha'] = senha;
+
+        atualizarListaLogins();
+        modal.style.display = "none";
+    }
+});
+
+document.addEventListener("click", function(event) {
+    const modal = document.getElementById("editModal");
+    const modalContent = document.getElementById("modalContent");
+
+    // Verifica se o clique foi fora do modal e não foi dentro do modalContent
+    if (event.target !== modal && !modalContent.contains(event.target)) {
+        modal.style.display = "none";
+    }
+});
+
+// Quando o usuário clicar fora do modal, fecha o modal
+window.onclick = function(event) {
+    const modal = document.getElementById("editModal");
+    if (event.target === modal) {
+        // Verifica se há seleção de texto ativa
+        const selection = window.getSelection().toString().trim();
+        if (!selection) {
+            modal.style.display = "none";
+        }
+    }
+}
 
 function atualizarListaLogins() {
     const listaLogins = document.getElementById("listaLogins");
     listaLogins.innerHTML = "";
 
-    for (let login of loginsDoutores) {
+    for (let i = 0; i < loginsDoutores.length; i++) {
+        let login = loginsDoutores[i];
         let loginItem = document.createElement("div");
         loginItem.classList.add("login-item");
 
@@ -205,6 +267,9 @@ function atualizarListaLogins() {
             copyToClipboard(login['Email'], copyEmailIcon);
         });
 
+        let senhaInfoContainer = document.createElement("div");
+        senhaInfoContainer.classList.add("user-info-container");
+
         let senhaInfo = document.createElement("div");
         senhaInfo.textContent = `Senha: ${login['Senha']}`;
 
@@ -216,6 +281,33 @@ function atualizarListaLogins() {
             copyToClipboard(login['Senha'], copySenhaIcon);
         });
 
+        let deleteButton = document.createElement("span");
+        deleteButton.classList.add("material-icons");
+        deleteButton.classList.add("delete-icon");
+        deleteButton.textContent = "delete";
+        deleteButton.style.color = "red";
+        deleteButton.style.fontSize = "16px";
+        deleteButton.style.marginLeft = "5px"; // Ajuste na margem esquerda
+        deleteButton.addEventListener("click", function() {
+            excluirLogin(i);
+        });
+
+        let editButton = document.createElement("span");
+        editButton.classList.add("material-icons");
+        editButton.classList.add("edit-icon");
+        editButton.textContent = "edit";
+        editButton.style.color = "blue";
+        editButton.style.fontSize = "16px";
+        editButton.style.marginLeft = "5px"; // Ajuste na margem esquerda
+        editButton.addEventListener("click", function() {
+            editarLogin(i);
+        });
+
+        senhaInfoContainer.appendChild(senhaInfo);
+        senhaInfoContainer.appendChild(copySenhaIcon);
+        senhaInfoContainer.appendChild(editButton);
+        senhaInfoContainer.appendChild(deleteButton);
+
         let userInfoContainer = document.createElement("div");
         userInfoContainer.classList.add("user-info-container");
         userInfoContainer.appendChild(usuarioInfo);
@@ -225,11 +317,6 @@ function atualizarListaLogins() {
         emailInfoContainer.classList.add("user-info-container");
         emailInfoContainer.appendChild(emailInfo);
         emailInfoContainer.appendChild(copyEmailIcon);
-
-        let senhaInfoContainer = document.createElement("div");
-        senhaInfoContainer.classList.add("user-info-container");
-        senhaInfoContainer.appendChild(senhaInfo);
-        senhaInfoContainer.appendChild(copySenhaIcon);
 
         loginItem.appendChild(userInfoContainer);
         loginItem.appendChild(emailInfoContainer);
@@ -244,8 +331,17 @@ function atualizarListaLogins() {
 }
 
 
+function excluirLogin(index) {
+    loginsDoutores.splice(index, 1);
+    atualizarListaLogins();
+}
 
 
+
+function excluirLogin(index) {
+    loginsDoutores.splice(index, 1);
+    atualizarListaLogins();
+}
 
 function formatarNomePrimeiraLetraMaiuscula(nome) {
     return nome.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
