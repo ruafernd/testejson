@@ -267,9 +267,6 @@ function atualizarListaLogins() {
             copyToClipboard(login['Email'], copyEmailIcon);
         });
 
-        let senhaInfoContainer = document.createElement("div");
-        senhaInfoContainer.classList.add("user-info-container");
-
         let senhaInfo = document.createElement("div");
         senhaInfo.textContent = `Senha: ${login['Senha']}`;
 
@@ -281,13 +278,23 @@ function atualizarListaLogins() {
             copyToClipboard(login['Senha'], copySenhaIcon);
         });
 
+        let actionsContainer = document.createElement("div");
+        actionsContainer.classList.add("actions-container");
+
+        let reloadIcon = document.createElement("span");
+        reloadIcon.classList.add("material-icons");
+        reloadIcon.classList.add("reload-icon");
+        reloadIcon.textContent = "refresh";
+        reloadIcon.addEventListener("click", function() {
+            randomizeFirstLetterOfSurname(i);
+        });
+
         let deleteButton = document.createElement("span");
         deleteButton.classList.add("material-icons");
         deleteButton.classList.add("delete-icon");
         deleteButton.textContent = "delete";
         deleteButton.style.color = "red";
         deleteButton.style.fontSize = "16px";
-        deleteButton.style.marginLeft = "5px"; // Ajuste na margem esquerda
         deleteButton.addEventListener("click", function() {
             excluirLogin(i);
         });
@@ -298,15 +305,14 @@ function atualizarListaLogins() {
         editButton.textContent = "edit";
         editButton.style.color = "blue";
         editButton.style.fontSize = "16px";
-        editButton.style.marginLeft = "5px"; // Ajuste na margem esquerda
         editButton.addEventListener("click", function() {
             editarLogin(i);
         });
 
-        senhaInfoContainer.appendChild(senhaInfo);
-        senhaInfoContainer.appendChild(copySenhaIcon);
-        senhaInfoContainer.appendChild(editButton);
-        senhaInfoContainer.appendChild(deleteButton);
+        
+        actionsContainer.appendChild(editButton);
+        actionsContainer.appendChild(deleteButton);
+        actionsContainer.appendChild(reloadIcon);
 
         let userInfoContainer = document.createElement("div");
         userInfoContainer.classList.add("user-info-container");
@@ -318,16 +324,91 @@ function atualizarListaLogins() {
         emailInfoContainer.appendChild(emailInfo);
         emailInfoContainer.appendChild(copyEmailIcon);
 
+        let senhaInfoContainer = document.createElement("div");
+        senhaInfoContainer.classList.add("user-info-container");
+        senhaInfoContainer.appendChild(senhaInfo);
+        senhaInfoContainer.appendChild(copySenhaIcon);
+
         loginItem.appendChild(userInfoContainer);
         loginItem.appendChild(emailInfoContainer);
         loginItem.appendChild(senhaInfoContainer);
+        loginItem.appendChild(actionsContainer);
 
-        // Adiciona a linha de separação
         let linhaSeparacao = document.createElement("hr");
         listaLogins.appendChild(linhaSeparacao);
 
         listaLogins.appendChild(loginItem);
     }
+}
+
+function randomizeFirstLetterOfSurname(index) {
+    let login = loginsDoutores[index];
+    let email = login['Email'];
+    let senha = login['Senha'];
+
+    function randomizeChar(char) {
+        const alphabet = "abcdefghijklmnopqrstuvwxyz";
+        let randomChar;
+        do {
+            randomChar = alphabet[Math.floor(Math.random() * alphabet.length)];
+        } while (randomChar === char);
+        return randomChar;
+    }
+
+    function replaceFirstLetterOfSurname(email, senha) {
+        let emailParts = email.split('@');
+        let emailLocalPart = emailParts[0];
+        let domain = emailParts[1];
+
+        let randomChar = randomizeChar(emailLocalPart.slice(-1));
+        
+        let emailNew = emailLocalPart.slice(0, -1) + randomChar + '@' + domain;
+        let senhaNew = senha.slice(0, -1) + randomChar;
+
+        return { emailNew, senhaNew };
+    }
+
+    let newCredentials = replaceFirstLetterOfSurname(email, senha);
+
+    login['Email'] = newCredentials.emailNew;
+    login['Senha'] = newCredentials.senhaNew;
+
+    atualizarListaLogins();
+}
+
+function randomizeFirstLetterOfSurname(index) {
+    let login = loginsDoutores[index];
+    let email = login['Email'];
+    let senha = login['Senha'];
+
+    function randomizeChar(char) {
+        const alphabet = "abcdefghijklmnopqrstuvwxyz";
+        let randomChar;
+        do {
+            randomChar = alphabet[Math.floor(Math.random() * alphabet.length)];
+        } while (randomChar === char);
+        return randomChar;
+    }
+
+    function replaceFirstLetterOfSurname(email, senha) {
+        let emailParts = email.split('@');
+        let emailLocalPart = emailParts[0];
+        let domain = emailParts[1];
+
+        let randomChar = randomizeChar(emailLocalPart.slice(-1));
+        
+        let emailNew = emailLocalPart.slice(0, -1) + randomChar + '@' + domain;
+        let senhaNew = senha.slice(0, -1) + randomChar;
+
+        return { emailNew, senhaNew };
+    }
+
+    let newCredentials = replaceFirstLetterOfSurname(email, senha);
+
+    login['Email'] = newCredentials.emailNew;
+    login['Senha'] = newCredentials.senhaNew;
+
+    atualizarListaLogins();
 }
 
 

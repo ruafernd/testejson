@@ -133,6 +133,13 @@ select:focus,
 
 .login-item .material-icons {
     font-size: 16px; /* Altere o tamanho conforme necessário */
+    color: black !important;
+}
+.action-buttons {
+    display: flex;
+    justify-content: flex-start; /* Alinha os ícones à esquerda */
+    max-width: 490px;
+    margin-left: -10px; /* Ajusta a margem para a esquerda */
 }
 
 .user-info-container {
@@ -142,19 +149,31 @@ select:focus,
 }
 
 .delete-icon,
-.edit-icon {
-    margin-left: 5px; /* Reduz a margem entre os ícones */
+.edit-icon,
+.reload-icon {
+    margin-left: 0px; /* Reduz a margem entre os ícones */
+    margin-right: 5px;
     font-size: 20px; /* Ajusta o tamanho dos ícones */
+    user-select: none; /* Impede a seleção de texto ao clicar nos ícones */
+    fill: none; /* Remove o preenchimento visual */
+    stroke: black; /* Cor do contorno do ícone */
+    stroke-width: 2; /* Espessura do contorno */
+
 }
 
 .edit-icon {
     cursor: pointer; /* Faz o ícone parecer um botão */
-    color: blue;
+    color: black;
+}
+
+.reload-icon {
+    cursor: pointer;
+    color: black;
 }
 
 .delete-icon {
     cursor: pointer; /* Faz o ícone parecer um botão */
-    color: blue;
+    color: black;
 }
 
 /* The Modal (background) */
