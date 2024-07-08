@@ -6,6 +6,49 @@ function obterDominioEmail(unidade) {
     return unidadeEncontrada ? unidadeEncontrada.email : "";
 }
 
+
+document.getElementById("unidadeInput").addEventListener("focus", function () {
+    const sugestoes = document.getElementById("sugestoes");
+    sugestoes.style.display = "block"; // Exibe a lista de sugestões ao focar no input
+    atualizarSugestoesUnidade(); // Atualiza as sugestões baseadas no texto atual do input
+});
+
+document.getElementById("unidadeInput").addEventListener("input", function () {
+    atualizarSugestoesUnidade(); // Atualiza as sugestões conforme o usuário digita
+});
+
+function atualizarSugestoesUnidade() {
+    const unidadeInput = document.getElementById("unidadeInput");
+    const sugestoes = document.getElementById("sugestoes");
+    sugestoes.innerHTML = ""; // Limpa as sugestões anteriores
+
+    const textoInput = unidadeInput.value.toLowerCase().trim(); // Captura o texto digitado pelo usuário, removendo espaços em branco extras
+
+    unidadesEmails.forEach(item => {
+        const unidadeMinuscula = item.unidade.toLowerCase();
+        const emailMinusculo = item.email.toLowerCase();
+        const cnpjFormatado = item.cnpj ? item.cnpj.replace(/[./]/g, "") : ""; // Remove apenas os caracteres . e / do CNPJ para comparação
+        const cnpj2Formatado = item.cnpj2 ? item.cnpj2.replace(/[./]/g, "") : "";
+
+        // Verifica se o texto digitado está contido no nome da unidade, no email ou no CNPJ
+        if (unidadeMinuscula.includes(textoInput) || emailMinusculo.includes(textoInput) || cnpjFormatado.includes(textoInput.replace(/[./]/g, "")) || cnpj2Formatado.includes(textoInput.replace(/[./]/g, ""))) {
+            const sugestao = document.createElement("div");
+            sugestao.classList.add("sugestao");
+            sugestao.textContent = `${item.unidade}`; // Define o texto da sugestão para incluir unidade, email e cnpj
+            sugestao.addEventListener("click", function () {
+                unidadeInput.value = item.unidade; // Preenche o campo de entrada com o nome da unidade
+                sugestoes.innerHTML = ""; // Limpa as sugestões após a seleção
+                selecionarUnidade(item.unidade); // Chama a função para selecionar a unidade
+                limparListaUsuarios(); // Limpa a lista de usuários
+            });
+            sugestoes.appendChild(sugestao);
+        }
+    });
+
+    sugestoes.style.display = sugestoes.childNodes.length > 0 ? "block" : "none"; // Exibe ou oculta as sugestões conforme necessário
+}
+
+
 document.getElementById("unidadeInput").addEventListener("focus", function () {
     // Exibe as sugestões de unidade (defina a exibição das sugestões de acordo com sua estrutura HTML)
     document.getElementById("sugestoes").style.display = "block";
