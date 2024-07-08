@@ -8,6 +8,9 @@ body {
     background: linear-gradient(90deg, #1a237e, #1e88e5);
     color: white;
     font-family: Arial, sans-serif;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    overflow-x: hidden; /* Para remover a rolagem horizontal */
+    overflow-y: hidden; /* Para remover a rolagem vertical */
 }
 
 .night-mode .dark-logo {
@@ -389,9 +392,7 @@ label {
 
 
 
-body {
-    transition: background-color 0.5s ease, color 0.5s ease;
-}
+
 
 /* Estilo para o modo noturno */
 body.night-mode {
@@ -473,10 +474,6 @@ body.night-mode .dark-logo {
     border: none;
     outline: none;
 }
-body {
-    overflow-x: hidden; /* Para remover a rolagem horizontal */
-    overflow-y: hidden; /* Para remover a rolagem vertical */
-}
 
 /* Estilo para o modo noturno */
 body.night-mode .login-list {
@@ -544,6 +541,8 @@ body.night-mode label[for="prefixo"] {
 }
 
 .ui-switch {
+    width: 30px; /* Ajuste o tamanho do switch alterando este valor */
+    height: 9px;
     --switch-bg: rgb(135, 150, 165);
     --switch-width: 48px;
     --switch-height: 20px;
