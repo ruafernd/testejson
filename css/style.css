@@ -10,6 +10,9 @@ body {
     font-family: Arial, sans-serif;
 }
 
+.night-mode .dark-logo {
+    filter: brightness(0) invert(1);
+}
 
 .login-container {
     background-color: aliceblue;
@@ -21,6 +24,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: background-color 0.5s ease, color 0.5s ease;
+
 }
 
 
@@ -378,6 +383,9 @@ label {
 
 
 
+body {
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
 
 /* Estilo para o modo noturno */
 body.night-mode {
@@ -466,12 +474,13 @@ body {
 
 /* Estilo para o modo noturno */
 body.night-mode .login-list {
-    background-color: #333; /* Cor de fundo mais escura */
-    color: white; /* Cor da fonte branca */
+    background-color: #333;
+    color: white;
 }
 
-body.night-mode .material-icons {
- color: #ffffff;
+
+body.night-mode .login-list .material-icons {
+    color: white !important;
 }
 
 /* Estilo para o modo noturno */
@@ -589,8 +598,3 @@ body.night-mode label[for="prefixo"] {
     height: 0;
   }
   
-
-  .night-mode .dark-logo {
-    filter: brightness(0) invert(1);
-}
-    
