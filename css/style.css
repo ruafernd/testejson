@@ -176,6 +176,8 @@ select:focus,
     color: black;
 }
 
+
+
 /* The Modal (background) */
 .modal {
     display: none;
@@ -202,6 +204,7 @@ select:focus,
     position: relative; /* Necessário para usar top, bottom, left, right */
     top: 90px; /* Ajusta a distância do topo */
 }
+
 
 
 
@@ -374,4 +377,132 @@ label {
 
 
 
+
+/* Estilo para o modo noturno */
+body.night-mode {
+    background: linear-gradient(90deg, #000000, #2c2c2c);
+    color: white;
+}
+
+body.night-mode .login-container {
+    background-color: #333;
+    color: white;
+}
+
+body.night-mode input,
+body.night-mode select,
+body.night-mode #unidadeInput,
+body.night-mode #email,
+body.night-mode #usuario {
+    background-color: #333;
+    color: white;
+    border-bottom: 1.9px solid #888;
+}
+
+body.night-mode .material-icons {
+    color: white;
+}
+
+body.night-mode .modal-content {
+    background-color: #333;
+    color: white;
+}
+
+body.night-mode #sugestoes {
+    background-color: #444;
+    color: white;
+}
+
+body.night-mode button {
+    background-color: #000000;
+    color: white;
+}
+
+body.night-mode .light-logo {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+body.night-mode .dark-logo {
+    opacity: 1;
+    position: static;
+    z-index: 1;
+}
+
+.light-logo {
+    opacity: 1;
+    position: static;
+    z-index: 1;
+}
+
+.dark-logo {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+/* Estilo para o ícone de alternância */
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+}
+
+#toggleMode {
+    cursor: pointer;
+    font-size: 24px;
+    color: inherit;
+    background: none;
+    border: none;
+    outline: none;
+}
+body {
+    overflow-x: hidden; /* Para remover a rolagem horizontal */
+    overflow-y: hidden; /* Para remover a rolagem vertical */
+}
+
+/* Estilo para o modo noturno */
+body.night-mode .login-list {
+    background-color: #333; /* Cor de fundo mais escura */
+    color: white; /* Cor da fonte branca */
+}
+
+body.night-mode .material-icons {
+ color: #ffffff;
+}
+
+/* Estilo para o modo noturno */
+body.night-mode .login-list {
+    background-color: #333; /* Cor de fundo mais escura */
+    color: white; /* Cor da fonte branca */
+}
+
+body.night-mode .login-list .material-icons {
+    color: white !important; /* Cor dos ícones na lista de logins */
+}
+
+/* Estilo para o modo noturno */
+body.night-mode input,
+body.night-mode select,
+body.night-mode #unidadeInput,
+body.night-mode #email,
+body.night-mode #usuario {
+    background-color: #333; /* Cor de fundo escura para inputs */
+    color: rgb(255, 255, 255) !important; /* Cor da fonte branca para inputs */
+    border-bottom-color: #ffffff; /* Cor do fundo do input */
+}
+
+body.night-mode input[type="text"]::placeholder,
+body.night-mode select::placeholder,
+body.night-mode #unidadeInput::placeholder,
+body.night-mode #email::placeholder,
+body.night-mode #usuario::placeholder {
+    color: #ffffff; /* Cor do placeholder */
+}
+
+body.night-mode .material-icons {
+    color: rgb(255, 255, 255) !important; /* Cor dos ícones dentro dos inputs */
+}
 

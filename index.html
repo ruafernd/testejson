@@ -7,24 +7,19 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
+    <div class="toggle-container">
+        <span id="toggleMode" class="material-icons" onclick="toggleNightMode()">dark_mode</span>
+    </div>
+    <div class="login-container">
+        <img src="icons/logoAtendimentointeligente.png" width="250px" class="iconcadastro light-logo">
+        <img src="icons/aiescuro.png" width="250px" class="iconcadastro dark-logo">
 
-
-    
-        <div class="login-container">
-            
-            <img src="icons/logoAtendimentointeligente.png" width="250p" class="iconcadastro">
-         
-
-            
-     
         <div class="usuarios-label">
             <div class="input-field no-label">
-                <i class="material-icons">person</i>  
+                <i class="material-icons">person</i>
                 <input type="text" id="usuario" class="input-field" autocomplete="off" autocorrect="off" placeholder="Usuário">
             </div>
         </div>
-      
-    
 
         <div class="prefixo-container">
             <label for="prefixo">Prefixo:</label>
@@ -34,55 +29,40 @@
                 <option value="Nenhum">Recepção</option>
             </select>
         </div>
-        
-       
 
         <div class="input-field no-label">
             <i class="material-icons">apartment</i>
-             <input type="text" id="unidadeInput" autocomplete="off" autocorrect="off" class="input-field" placeholder="Unidade">
-             <div id="sugestoes"></div> 
+            <input type="text" id="unidadeInput" autocomplete="off" autocorrect="off" class="input-field" placeholder="Unidade">
+            <div id="sugestoes"></div>
         </div>
-
-        
 
         <div>
             <div class="input-field no-label">
-                <i class="material-icons">email</i> 
+                <i class="material-icons">email</i>
                 <input type="text" id="email" placeholder="Email padrão" readonly>
             </div>
         </div>
-        
-        
-        
+
         <div class="action-buttons">
             <div>
                 <button onclick="adicionarLogin()">Adicionar Login</button>
                 <button onclick="excluirUltimoLogin()">Excluir Último</button>
             </div>
             <div>
-                
                 <button onclick="copiarLista()">Copiar Usuários</button>
                 <button onclick="limparUsuarios()">Limpar Lista</button>
             </div>
         </div>
-        
 
-
-        
         <div class="login-list" id="listaLogins"></div>
-
-        
-
-
     </div>
-  
 
     <div id="editModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <div style="color: #888;">
-            <h2>Editar Login</h2>
-        </div>
+                <h2>Editar Login</h2>
+            </div>
             <div class="input-container">
                 <i class="material-icons">person</i>
                 <input type="text" id="editUsuario" name="editUsuario" placeholder="Usuário">
@@ -98,13 +78,21 @@
             <button id="saveEdit">Salvar</button>
         </div>
     </div>
-    
-    
-    
+
     <div class="assinatura" style="font-size: 8px; padding-top: 10px; color: rgb(255, 255, 255);">Criado por Ruã Fernandes</div>
-    
 
     <script src="scripts/unidadesEmails.js"></script>
     <script src="scripts/script.js"></script>
+    <script>
+        function toggleNightMode() {
+            document.body.classList.toggle('night-mode');
+            const icon = document.getElementById('toggleMode');
+            if (document.body.classList.contains('night-mode')) {
+                icon.textContent = 'light_mode';
+            } else {
+                icon.textContent = 'dark_mode';
+            }
+        }
+    </script>
 </body>
 </html>
