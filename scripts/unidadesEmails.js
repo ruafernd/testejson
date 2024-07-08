@@ -77,6 +77,7 @@ const unidadesEmails = [
     { unidade: "COESP CENTRO ODONTOLOGICO - GERAL", email: "coesp.com.br", cnpj: "41.223.207/0001-02"},
     { unidade: "CARTÓRIO CARLOS ULYSSES - GERAL2", email: "cartoriocarlosulysses.com", cnpj: "347.824.437-49"},
     { unidade: "CLINICA TOP - GERAL2", email: "clinicatop.com", cnpj: "09.356.784/0001-06"},
+    { unidade: "UNIVISÃO - GERAL2", email: "univisao.com", cnpj: "09.492.118/0001-59"},
     { unidade: "ENDOVIDEO - GERAL2", email: "endovideo.com", cnpj: "41.139.239/0001-24"},
     { unidade: "PULSE VIDA SAUDE - GERAL2", email: "pulsevida.com", cnpj: "53.107.316/0001-43"},
     { unidade: "AMIP - GERAL2", email: "amip.com", cnpj: "09.127.333/0001-50"},
