@@ -141,6 +141,8 @@ select:focus,
 .login-item .material-icons {
     font-size: 16px; /* Altere o tamanho conforme necessário */
     color: black !important;
+    transition: background-color 0.5s ease, color 0.5s ease, border-bottom-color 0.5s ease;
+
 }
 .action-buttons {
     display: flex;
@@ -227,6 +229,8 @@ select:focus,
     transform: translateY(-50%);
     font-size: 20px; /* ajusta o tamanho do ícone */
     color: #888;
+    transition: background-color 0.5s ease, color 0.5s ease, border-bottom-color 0.5s ease;
+
 }
 
 .input-container input {
@@ -273,6 +277,8 @@ button {
     cursor: pointer;
     display: block;
     width: 150px;
+    transition: background-color 0.5s ease, color 0.5s ease, border-bottom-color 0.5s ease;
+
 }
 
 
@@ -329,6 +335,8 @@ select#prefixo.input-field {
     padding: 10px;
     font-size: 14px;
     border: 1px solid #ccc;
+    transition: background-color 0.5s ease, color 0.5s ease, border-bottom-color 0.5s ease;
+
 }
 
 .action-buttons {
@@ -616,6 +624,7 @@ body #usuario {
 body.night-mode {
     background: linear-gradient(90deg, #000000, #2c2c2c);
     color: white;
+    
 }
 
 body.night-mode .login-container {
