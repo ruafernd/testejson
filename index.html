@@ -7,9 +7,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
-    <div class="toggle-container">
-        <span id="toggleMode" class="material-icons" onclick="toggleNightMode()">dark_mode</span>
-    </div>
+    <label class="ui-switch">
+        <input type="checkbox" id="toggleSwitch" onchange="toggleNightMode(this)">
+        <div class="slider">
+          <div class="circle"></div>
+        </div>
+      </label>
+      
+
     <div class="login-container">
         <img src="icons/logoAtendimentointeligente.png" width="250px" class="iconcadastro light-logo">
         <img src="icons/aiescuro.png" width="250px" class="iconcadastro dark-logo">
