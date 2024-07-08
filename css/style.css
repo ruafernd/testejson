@@ -60,6 +60,7 @@ body {
     font-size: 22px;
     transform: translateY(-50%);
     color: rgb(119, 119, 119);
+    
 }
 
 .input-field.no-label input#email {
@@ -108,7 +109,7 @@ select,
     box-sizing: border-box;
     background-color: transparent;
     outline: none;
-    transition: border-bottom-color 1s ease;
+    transition: background-color 0.5s ease, color 0.5s ease, border-bottom-color 0.5s ease;
 }
 
 
@@ -374,6 +375,8 @@ label {
     font-size: 14px;
     float: right;
     margin-top: 10px;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Adicione a transição */
+
     overflow-y: auto;
     flex-direction: column-reverse;
     
@@ -499,6 +502,7 @@ body.night-mode select,
 body.night-mode #unidadeInput,
 body.night-mode #email,
 body.night-mode #usuario {
+    transition: background-color 0.5s ease, color 0.5s ease, border-bottom-color 0.5s ease;
     background-color: #333; /* Cor de fundo escura para inputs */
     color: rgb(255, 255, 255) !important; /* Cor da fonte branca para inputs */
     border-bottom-color: #ffffff; /* Cor do fundo do input */
@@ -598,3 +602,33 @@ body.night-mode label[for="prefixo"] {
     height: 0;
   }
   
+
+body input[type="text"],
+body select,
+body #unidadeInput,
+body #email,
+body #usuario {
+    background-color: aliceblue; /* Cor de fundo padrão */
+    color: black; /* Cor do texto padrão */
+    border-bottom: 1.9px solid #ccc; /* Cor da borda inferior padrão */
+}
+
+body.night-mode {
+    background: linear-gradient(90deg, #000000, #2c2c2c);
+    color: white;
+}
+
+body.night-mode .login-container {
+    background-color: #333;
+    color: white;
+}
+
+body.night-mode input,
+body.night-mode select,
+body.night-mode #unidadeInput,
+body.night-mode #email,
+body.night-mode #usuario {
+    background-color: #333;
+    color: white;
+    border-bottom: 1.9px solid #888;
+}
