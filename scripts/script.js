@@ -83,10 +83,11 @@ function limparListaUsuarios() {
 // Array para armazenar o histórico de adições de login
 let historicoAdicoes = [];
 
-// Função para adicionar um login
 function adicionarLogin() {
-    const usuario = document.getElementById("usuario").value.trim(); 
+    const usuarioInput = document.getElementById("usuario");
+    const usuario = usuarioInput.value.trim().replace(/\s+/g, ' '); // Remove espaços extras entre palavras
     const prefixo = document.getElementById("prefixo").value;
+    const unidadeInput = document.getElementById("unidadeInput").value.trim();
 
     if (!usuario || (!prefixo && prefixo !== "Nenhum") || !unidadeSelecionada) {
         alert("Preencha todos os campos antes de adicionar um login.");
@@ -127,7 +128,7 @@ function adicionarLogin() {
     atualizarListaLogins();
 
     // Limpa os campos de entrada após adicionar o login
-    document.getElementById("usuario").value = "";
+    usuarioInput.value = "";
     document.getElementById("sugestoes").innerHTML = "";
 }
 
