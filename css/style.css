@@ -506,3 +506,18 @@ body.night-mode .material-icons {
     color: rgb(255, 255, 255) !important; /* Cor dos ícones dentro dos inputs */
 }
 
+/* Estilo para o modo noturno - cor do texto do select */
+body.night-mode #prefixo {
+    color: white; /* Cor do texto do select no modo noturno */
+}
+
+/* Estilo para o modo noturno - cor do texto das opções do select */
+body.night-mode #prefixo option {
+    color: white; /* Cor do texto das opções do select no modo noturno */
+}
+
+/* Estilo para o modo noturno - cor de fundo das opções do select */
+body.night-mode #prefixo option {
+    background-color: #333; /* Cor de fundo das opções do select no modo noturno */
+}
+
