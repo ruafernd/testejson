@@ -442,11 +442,17 @@
     }
 
     function limparUnidade() {
+        if (unidadeSelecionada === "") {
+            alert("Selecione uma unidade primeiro!");
+            return;
+        }
+    
         loginsDoutores.length = 0;
         atualizarListaLogins();
         unidadeSelecionada = "";
         document.getElementById("unidadeInput").value = "";
     }
+    
 
 
 
