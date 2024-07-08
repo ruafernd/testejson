@@ -438,3 +438,15 @@ function limparUsuarios() {
     unidadeSelecionada = "";
     document.getElementById("unidadeInput").value = "";
 }
+
+
+// Função para alternar entre modo noturno e diurno
+function toggleNightMode() {
+    document.body.classList.toggle('night-mode');
+    const icon = document.getElementById('toggleMode');
+    if (document.body.classList.contains('night-mode')) {
+        icon.textContent = 'light_mode';
+    } else {
+        icon.textContent = 'dark_mode';
+    }
+}
