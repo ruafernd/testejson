@@ -141,8 +141,6 @@ select:focus,
 .login-item .material-icons {
     font-size: 16px; /* Altere o tamanho conforme necessário */
     color: black !important;
-    transition: background-color 0.5s ease, color 0.5s ease, border-bottom-color 0.5s ease;
-
 }
 .action-buttons {
     display: flex;
@@ -229,8 +227,7 @@ select:focus,
     transform: translateY(-50%);
     font-size: 20px; /* ajusta o tamanho do ícone */
     color: #888;
-    transition: background-color 0.5s ease, color 0.5s ease, border-bottom-color 0.5s ease;
-
+    
 }
 
 .input-container input {
@@ -335,8 +332,6 @@ select#prefixo.input-field {
     padding: 10px;
     font-size: 14px;
     border: 1px solid #ccc;
-    transition: background-color 0.5s ease, color 0.5s ease, border-bottom-color 0.5s ease;
-
 }
 
 .action-buttons {

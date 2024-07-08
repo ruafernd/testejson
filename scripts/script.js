@@ -80,7 +80,10 @@ function limparListaUsuarios() {
     atualizarListaLogins();
 }
 
-// Função para adicionar logins a lista
+// Array para armazenar o histórico de adições de login
+let historicoAdicoes = [];
+
+// Função para adicionar um login
 function adicionarLogin() {
     const usuario = document.getElementById("usuario").value.trim(); 
     const prefixo = document.getElementById("prefixo").value;
@@ -114,21 +117,49 @@ function adicionarLogin() {
 
     let senha = `${prefixo !== "Nenhum" ? prefixo.toLowerCase().replace('.', '') : ""}${removerAcentos(primeiroNome)}${removerAcentos(primeiraLetraSegundoNome)}`.toLowerCase();
 
+    // Adiciona o login ao array loginsDoutores
     loginsDoutores.push({"Usuário": nomeFormatado, "Senha": senha, "Email": emailFinal});
 
+    // Adiciona a operação ao histórico de adições
+    historicoAdicoes.push(loginsDoutores.length - 1);
+
+    // Atualiza a lista visual de logins
     atualizarListaLogins();
 
+    // Limpa os campos de entrada após adicionar o login
     document.getElementById("usuario").value = "";
     document.getElementById("sugestoes").innerHTML = "";
 }
 
+// Função para desfazer a adição do último login
+function desfazerAdicaoLogin() {
+    if (historicoAdicoes.length > 0) {
+        const ultimoIndiceAdicao = historicoAdicoes.pop();
+        loginsDoutores.splice(ultimoIndiceAdicao, 1); // Remove o último login adicionado
+
+        // Atualiza a lista visual de logins após desfazer
+        atualizarListaLogins();
+    } else {
+        alert("Não há adições para desfazer.");
+    }
+}
+
+// Captura do evento de teclado global para Ctrl + Z
+document.addEventListener('keydown', function(event) {
+    if (event.ctrlKey && event.key === 'z') {
+        event.preventDefault(); // Evita o comportamento padrão de desfazer no navegador
+        desfazerAdicaoLogin();
+    }
+});
+
+
 // Função para excluir o último usuário cadastrado
-function excluirUltimoLogin() {
+function excluirTodosLogins() {
     if (loginsDoutores.length === 0) {
         alert("Nenhum login para excluir.");
         return;
     }
-    loginsDoutores.pop();
+    loginsDoutores.length = 0;
     atualizarListaLogins();
 }
 
@@ -432,12 +463,13 @@ function removerAcentos(texto) {
     return texto.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 }
 
-function limparUsuarios() {
+function limparUnidade() {
     loginsDoutores.length = 0;
     atualizarListaLogins();
     unidadeSelecionada = "";
     document.getElementById("unidadeInput").value = "";
 }
+
 
 
 // Função para alternar entre modo noturno e diurno
