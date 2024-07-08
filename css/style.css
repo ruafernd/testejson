@@ -521,3 +521,8 @@ body.night-mode #prefixo option {
     background-color: #333; /* Cor de fundo das opções do select no modo noturno */
 }
 
+/* Estilo para o modo noturno - cor do texto do label "Prefixo:" */
+body.night-mode label[for="prefixo"] {
+    color: white; /* Cor do texto do label "Prefixo:" no modo noturno */
+}
+
