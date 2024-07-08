@@ -10,9 +10,6 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.night-mode .dark-logo {
-    filter: brightness(0) invert(1);
-}
 
 .login-container {
     background-color: aliceblue;
@@ -592,3 +589,8 @@ body.night-mode label[for="prefixo"] {
     height: 0;
   }
   
+
+  .night-mode .dark-logo {
+    filter: brightness(0) invert(1);
+}
+    
