@@ -160,6 +160,7 @@ select:focus,
     flex-wrap: wrap;
 }
 
+/* Estilo dos ícones */
 .delete-icon,
 .edit-icon,
 .reload-icon {
@@ -170,7 +171,7 @@ select:focus,
     fill: none; /* Remove o preenchimento visual */
     stroke: black; /* Cor do contorno do ícone */
     stroke-width: 2; /* Espessura do contorno */
-
+    margin-top: 4px; /* Adiciona margem superior para espaçar os ícones */
 }
 
 .edit-icon {
