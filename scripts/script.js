@@ -21,32 +21,36 @@
         const unidadeInput = document.getElementById("unidadeInput");
         const sugestoes = document.getElementById("sugestoes");
         sugestoes.innerHTML = ""; // Limpa as sugestões anteriores
-
+    
         const textoInput = unidadeInput.value.toLowerCase().trim(); // Captura o texto digitado pelo usuário, removendo espaços em branco extras
-
-        unidadesEmails.forEach(item => {
+    
+        // Filtra e ordena as unidades
+        const unidadesFiltradas = unidadesEmails.filter(item => {
             const unidadeMinuscula = item.unidade.toLowerCase();
             const emailMinusculo = item.email.toLowerCase();
             const cnpjFormatado = item.cnpj ? item.cnpj.replace(/[./]/g, "") : ""; // Remove apenas os caracteres . e / do CNPJ para comparação
             const cnpj2Formatado = item.cnpj2 ? item.cnpj2.replace(/[./]/g, "") : "";
-
+    
             // Verifica se o texto digitado está contido no nome da unidade, no email ou no CNPJ
-            if (unidadeMinuscula.includes(textoInput) || emailMinusculo.includes(textoInput) || cnpjFormatado.includes(textoInput.replace(/[./]/g, "")) || cnpj2Formatado.includes(textoInput.replace(/[./]/g, ""))) {
-                const sugestao = document.createElement("div");
-                sugestao.classList.add("sugestao");
-                sugestao.textContent = `${item.unidade}`; // Define o texto da sugestão para incluir unidade, email e cnpj
-                sugestao.addEventListener("click", function () {
-                    unidadeInput.value = item.unidade; // Preenche o campo de entrada com o nome da unidade
-                    sugestoes.innerHTML = ""; // Limpa as sugestões após a seleção
-                    selecionarUnidade(item.unidade); // Chama a função para selecionar a unidade
-                    limparListaUsuarios(); // Limpa a lista de usuários
-                });
-                sugestoes.appendChild(sugestao);
-            }
+            return unidadeMinuscula.includes(textoInput) || emailMinusculo.includes(textoInput) || cnpjFormatado.includes(textoInput.replace(/[./]/g, "")) || cnpj2Formatado.includes(textoInput.replace(/[./]/g, ""));
+        }).sort((a, b) => a.unidade.localeCompare(b.unidade)); // Ordena em ordem alfabética
+    
+        unidadesFiltradas.forEach(item => {
+            const sugestao = document.createElement("div");
+            sugestao.classList.add("sugestao");
+            sugestao.textContent = `${item.unidade}`; // Define o texto da sugestão para incluir unidade, email e cnpj
+            sugestao.addEventListener("click", function () {
+                unidadeInput.value = item.unidade; // Preenche o campo de entrada com o nome da unidade
+                sugestoes.innerHTML = ""; // Limpa as sugestões após a seleção
+                selecionarUnidade(item.unidade); // Chama a função para selecionar a unidade
+                limparListaUsuarios(); // Limpa a lista de usuários
+            });
+            sugestoes.appendChild(sugestao);
         });
-
+    
         sugestoes.style.display = sugestoes.childNodes.length > 0 ? "block" : "none"; // Exibe ou oculta as sugestões conforme necessário
     }
+    
 
 
 
