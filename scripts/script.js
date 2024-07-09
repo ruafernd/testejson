@@ -199,11 +199,11 @@
         el.select();
         document.execCommand('copy');
         document.body.removeChild(el);
-        
+    
         // Mudar ícone para "check"
         iconElement.textContent = "check";
         iconElement.classList.add("check-icon");
-        
+    
         // Voltar ao ícone original após 2 segundos
         setTimeout(() => {
             iconElement.textContent = "content_copy";
@@ -282,15 +282,15 @@
     function atualizarListaLogins() {
         const listaLogins = document.getElementById("listaLogins");
         listaLogins.innerHTML = "";
-
+    
         for (let i = 0; i < loginsDoutores.length; i++) {
             let login = loginsDoutores[i];
             let loginItem = document.createElement("div");
             loginItem.classList.add("login-item");
-
+    
             let usuarioInfo = document.createElement("div");
             usuarioInfo.textContent = `Usuário: ${login['Usuário']}`;
-
+    
             let copyUsuarioIcon = document.createElement("span");
             copyUsuarioIcon.classList.add("material-icons");
             copyUsuarioIcon.classList.add("copy-icon");
@@ -298,10 +298,10 @@
             copyUsuarioIcon.addEventListener("click", function() {
                 copyToClipboard(login['Usuário'], copyUsuarioIcon);
             });
-
+    
             let emailInfo = document.createElement("div");
             emailInfo.textContent = `Email: ${login['Email']}`;
-
+    
             let copyEmailIcon = document.createElement("span");
             copyEmailIcon.classList.add("material-icons");
             copyEmailIcon.classList.add("copy-icon");
@@ -309,21 +309,22 @@
             copyEmailIcon.addEventListener("click", function() {
                 copyToClipboard(login['Email'], copyEmailIcon);
             });
-
+    
             let senhaInfo = document.createElement("div");
             senhaInfo.textContent = `Senha: ${login['Senha']}`;
-
+    
             let copySenhaIcon = document.createElement("span");
             copySenhaIcon.classList.add("material-icons");
             copySenhaIcon.classList.add("copy-icon");
             copySenhaIcon.textContent = "content_copy";
             copySenhaIcon.addEventListener("click", function() {
-                copyToClipboard(login['Senha'], copySenhaIcon);
+                const userInfo = `*---------------*\nUsuário: ${login['Usuário']}\nEmail: ${login['Email']}\nSenha: ${login['Senha']}`;
+                copyToClipboard(userInfo, copySenhaIcon);
             });
-
+    
             let actionsContainer = document.createElement("div");
             actionsContainer.classList.add("actions-container");
-
+    
             let reloadIcon = document.createElement("span");
             reloadIcon.classList.add("material-icons");
             reloadIcon.classList.add("reload-icon");
@@ -331,7 +332,7 @@
             reloadIcon.addEventListener("click", function() {
                 randomizeFirstLetterOfSurname(i);
             });
-
+    
             let deleteButton = document.createElement("span");
             deleteButton.classList.add("material-icons");
             deleteButton.classList.add("delete-icon");
@@ -341,7 +342,7 @@
             deleteButton.addEventListener("click", function() {
                 excluirLogin(i);
             });
-
+    
             let editButton = document.createElement("span");
             editButton.classList.add("material-icons");
             editButton.classList.add("edit-icon");
@@ -351,39 +352,38 @@
             editButton.addEventListener("click", function() {
                 editarLogin(i);
             });
-
-            
+    
             actionsContainer.appendChild(editButton);
             actionsContainer.appendChild(deleteButton);
             actionsContainer.appendChild(reloadIcon);
-
+            actionsContainer.appendChild(copySenhaIcon);  // Mover o ícone de copiar senha aqui
+    
             let userInfoContainer = document.createElement("div");
             userInfoContainer.classList.add("user-info-container");
             userInfoContainer.appendChild(usuarioInfo);
             userInfoContainer.appendChild(copyUsuarioIcon);
-
+    
             let emailInfoContainer = document.createElement("div");
             emailInfoContainer.classList.add("user-info-container");
             emailInfoContainer.appendChild(emailInfo);
             emailInfoContainer.appendChild(copyEmailIcon);
-
+    
             let senhaInfoContainer = document.createElement("div");
             senhaInfoContainer.classList.add("user-info-container");
             senhaInfoContainer.appendChild(senhaInfo);
-            senhaInfoContainer.appendChild(copySenhaIcon);
-
+            // senhaInfoContainer.appendChild(copySenhaIcon); // Remover o ícone de copiar senha daqui
+    
             loginItem.appendChild(userInfoContainer);
             loginItem.appendChild(emailInfoContainer);
             loginItem.appendChild(senhaInfoContainer);
             loginItem.appendChild(actionsContainer);
-
+    
             let linhaSeparacao = document.createElement("hr");
             listaLogins.appendChild(linhaSeparacao);
-
+    
             listaLogins.appendChild(loginItem);
         }
     }
-
     function randomizeFirstLetterOfSurname(index) {
         let login = loginsDoutores[index];
         let email = login['Email'];
