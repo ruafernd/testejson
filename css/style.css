@@ -393,8 +393,6 @@ label {
 
 
 
-
-
 /* Estilo para o modo noturno */
 body.night-mode {
     background: linear-gradient(90deg, #000000, #2c2c2c);
@@ -508,6 +506,19 @@ body.night-mode #usuario {
     color: rgb(255, 255, 255) !important; /* Cor da fonte branca para inputs */
     border-bottom-color: #ffffff; /* Cor do fundo do input */
 }
+
+
+/* Estilo para input focado no modo noturno */
+body.night-mode input[type="text"]:focus,
+body.night-mode select:focus,
+body.night-mode #unidadeInput:focus,
+body.night-mode #email:focus,
+body.night-mode #usuario:focus {
+    border-bottom-color: #ffffff; /* Cor branca da borda inferior focada */
+    box-shadow: 0 0px 0 0 #ffffff; /* Sombra branca simulando a onda */
+    transition: border-bottom-color 0.5s ease, box-shadow 0.5s ease; /* Transições suaves */
+}
+
 
 body.night-mode input[type="text"]::placeholder,
 body.night-mode select::placeholder,
