@@ -99,12 +99,16 @@ body {
 
 }
 
+
+
+
 input[type="text"],
 select,
 #unidadeInput,
 #email,
-#usuario {
-    width: 100%;
+#usuario,
+#prefixo {
+    width: 280px !important;
     padding: 7px;
     padding-left: 30px;
     margin-bottom: 10px;
