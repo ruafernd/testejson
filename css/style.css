@@ -222,13 +222,16 @@ select:focus,
 
 .input-container i.material-icons {
     position: absolute;
-    top: 50%;
-    left: 10px;
+    top: 37%;
+    left: 25px;
     transform: translateY(-50%);
     font-size: 20px; /* ajusta o tamanho do ícone */
     color: #888;
     
 }
+
+
+
 
 .input-container input {
     padding-left: 30px;
