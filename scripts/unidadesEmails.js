@@ -53,6 +53,7 @@ const unidadesEmails = [
     { unidade: "SICOOB JARAGUA - GERAL", email: "sicoob.com.br", cnpj: "02.493.000/0001-04"},
     { unidade: "SICOOB ARAPIRACA - GERAL", email: "sicoob.com.br", cnpj: "02.493.000/0003-68"},
     { unidade: "SICOOB MOSSORO - GERAL", email: "sicoobmossoro.com", cnpj: "02.382.755/0005-57"},
+    { unidade: "SICOOB - AIZAP", email: "sicoob.com.br", cnpj: ""},
     { unidade: "SICOOB ALECRIM - GERAL", email: "sicoob.com.br", cnpj: "02.382.755/0001-23"},
     { unidade: "SICOOB JATIUCA - GERAL", email: "sicoob.com.br", cnpj: "02.493.000/0008-72"},
     { unidade: "SICOOB DELMIRO GOUVEIA - GERAL", email: "sicoobdelmirogouveia.com", cnpj: "02.493.000/0009-53"},
