@@ -571,7 +571,7 @@ body.night-mode label[for="prefixo"] {
   }
   
   .slider {
-    width: 40px; /* Ajusta a largura do slider */
+    width: 39px; /* Ajusta a largura do slider */
     height: 20px; /* Ajusta a altura do slider */
     background: var(--switch-bg); /* Mantém o background conforme necessário */
     border-radius: 999px; /* Garante que o slider seja arredondado */
