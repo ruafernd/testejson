@@ -27,6 +27,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative; /* Certifique-se de que o container pai tem posição relativa */
+
     transition: background-color 0.5s ease, color 0.5s ease;
 
 }
@@ -541,12 +543,15 @@ body.night-mode label[for="prefixo"] {
 }
 
 .ui-switch {
-    width: 30px; /* Ajuste o tamanho do switch alterando este valor */
-    height: 9px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    left: 310px;
+    padding-right: 20px;
     --switch-bg: rgb(135, 150, 165);
-    --switch-width: 48px;
+    --switch-width: 43px !important;
     --switch-height: 20px;
-    --circle-diameter: 32px;
+    --circle-diameter: 27px;
     --circle-bg: rgb(0, 56, 146);
     --circle-inset: calc((var(--circle-diameter) - var(--switch-height)) / 2);
   }
@@ -556,13 +561,13 @@ body.night-mode label[for="prefixo"] {
   }
   
   .slider {
-    width: var(--switch-width);
-    height: var(--switch-height);
-    background: var(--switch-bg);
-    border-radius: 999px;
+    width: 40px; /* Ajusta a largura do slider */
+    height: 20px; /* Ajusta a altura do slider */
+    background: var(--switch-bg); /* Mantém o background conforme necessário */
+    border-radius: 999px; /* Garante que o slider seja arredondado */
     position: relative;
     cursor: pointer;
-  }
+}
   
   .slider .circle {
     top: calc(var(--circle-inset) * -1);
