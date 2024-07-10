@@ -269,6 +269,7 @@ const unidadesEmails = [
     { unidade: "AMOR SAUDE CACHOEIRO DE ITAPEMIRIM - ES", email: "ascachoeirodeitapemirim.com", cnpj: "11.419.787/0001-47"},
     { unidade: "AMOR SAUDE VIANA - ES", email: "amsviana.com", cnpj: "50.472.359/0001-30"},
     { unidade: "AMOR SAUDE SERRA SEDE - ES", email: "amsserrasede.com", cnpj: "47.781.666/0001-98"},
+    { unidade: "AMOR SAUDE TRES CORACOES - MG", email: "amstrescoracoes.com", cnpj: "50.580.065/0001-21"},
     { unidade: "AMOR SAUDE VARGINHA - MG", email: "asvarginha.com", cnpj: "08.145.097/0001-32"},
     { unidade: "AMOR SAUDE VALE DO ACO - MG", email: "amorsaudeva.com", cnpj: "29.533.195/0001-17"},
     { unidade: "AMOR SAUDE PASSOS - MG", email: "amorsaudepassos.com", cnpj: "12.111.983/0001-12"},
