@@ -24,6 +24,7 @@
 
 
     
+    
         const textoInput = removerAcentos(unidadeInput.value.toLowerCase().trim()); // Captura o texto digitado pelo usuário, removendo espaços em branco extras
     
         // Filtra e ordena as unidades
@@ -52,6 +53,10 @@
     
         sugestoes.style.display = sugestoes.childNodes.length > 0 ? "block" : "none"; // Exibe ou oculta as sugestões conforme necessário
     }
+    
+    document.getElementById("reloadPage").addEventListener("click", function() {
+        location.reload();
+    });
     
 
 

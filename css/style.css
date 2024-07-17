@@ -17,6 +17,7 @@ body {
     filter: brightness(0) invert(1);
 }
 
+
 .login-container {
     background-color: aliceblue;
     padding: 10px;
@@ -31,7 +32,21 @@ body {
     transition: background-color 0.5s ease, color 0.5s ease;
 
 }
+/* Adicione estas classes para o ícone de recarregar */
+.refresh-icon {
+    position: absolute;
+    top: 10px;
+    padding-left: 7px;
+    left: 10px;
+    cursor: pointer;
+    color: rgb(100, 82, 82);
+    font-size: 19px !important;
+}
 
+/* Estilo para o modo noturno do ícone de recarregar */
+body.night-mode .refresh-icon {
+    color: white;
+}
 
 
 
