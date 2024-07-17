@@ -50,6 +50,7 @@
             });
             sugestoes.appendChild(sugestao);
         });
+
     
         sugestoes.style.display = sugestoes.childNodes.length > 0 ? "block" : "none"; // Exibe ou oculta as sugestões conforme necessário
     }
@@ -462,6 +463,8 @@
         atualizarListaLogins();
         unidadeSelecionada = "";
         document.getElementById("unidadeInput").value = "";
+        document.getElementById("email").value = "";
+
     }
     
 
