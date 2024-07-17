@@ -21,8 +21,10 @@
         const unidadeInput = document.getElementById("unidadeInput");
         const sugestoes = document.getElementById("sugestoes");
         sugestoes.innerHTML = ""; // Limpa as sugestões anteriores
+
+
     
-        const textoInput = unidadeInput.value.toLowerCase().trim(); // Captura o texto digitado pelo usuário, removendo espaços em branco extras
+        const textoInput = removerAcentos(unidadeInput.value.toLowerCase().trim()); // Captura o texto digitado pelo usuário, removendo espaços em branco extras
     
         // Filtra e ordena as unidades
         const unidadesFiltradas = unidadesEmails.filter(item => {
