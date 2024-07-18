@@ -318,6 +318,8 @@
     function atualizarListaLogins() {
         const listaLogins = document.getElementById("listaLogins");
         listaLogins.innerHTML = "";
+
+        
     
         if (loginsDoutores.length > 0) {
             const unidadeInfo = unidadesEmails.find(item => item.unidade === unidadeSelecionada);
@@ -522,3 +524,37 @@
             icon.textContent = 'dark_mode';
         }
     }
+
+// Função para exportar os logins para CSV e ajustar o tamanho das colunas
+function exportLoginsToCSV() {
+    const logins = loginsDoutores; // Supondo que esta é sua lista de logins
+    let csvContent = [["Usuário", "Email", "Senha"]];
+
+    logins.forEach(login => {
+        csvContent.push([login.Usuário, login.Email, login.Senha]);
+    });
+
+    // Criar uma nova planilha
+    const ws = XLSX.utils.aoa_to_sheet(csvContent);
+    const wsCols = [
+        { wch: Math.max(...csvContent.map(row => row[0].length)) }, // Usuário
+        { wch: Math.max(...csvContent.map(row => row[1].length)) }, // Email
+        { wch: Math.max(...csvContent.map(row => row[2].length)) }  // Senha
+    ];
+    ws['!cols'] = wsCols;
+
+    // Criar um novo livro de trabalho
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, "Logins");
+
+    // Gerar o arquivo Excel e acionar o download
+    XLSX.writeFile(wb, "logins.xlsx");
+}
+
+// Evento de teclado para exportar os logins para CSV
+document.addEventListener('keydown', function(event) {
+    if (event.ctrlKey && event.key === '.') {
+        event.preventDefault();
+        exportLoginsToCSV();
+    }
+});
