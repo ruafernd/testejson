@@ -17,13 +17,35 @@
         atualizarSugestoesUnidade(); // Atualiza as sugestões conforme o usuário digita
     });
 
+    document.getElementById("unidadeInput").addEventListener("focus", function () {
+        const sugestoes = document.getElementById("sugestoes");
+        sugestoes.style.display = "block"; // Exibe a lista de sugestões ao focar no input
+        atualizarSugestoesUnidade(); // Atualiza as sugestões baseadas no texto atual do input
+    });
+    
+    document.getElementById("unidadeInput").addEventListener("input", function (event) {
+        const unidadeInput = event.target;
+        unidadeInput.value = formatarCNPJSeForCNPJ(unidadeInput.value);
+        atualizarSugestoesUnidade(); // Atualiza as sugestões conforme o usuário digita
+    });
+    
+    function formatarCNPJSeForCNPJ(texto) {
+        // Remove tudo que não for dígito
+        const apenasDigitos = texto.replace(/\D/g, '');
+    
+        // Verifica se o texto contém 14 dígitos, que é o comprimento de um CNPJ
+        if (apenasDigitos.length === 14) {
+            // Formata o texto como CNPJ: 99.999.999/9999-99
+            return apenasDigitos.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/, "$1.$2.$3/$4-$5");
+        }
+    
+        return texto; // Retorna o texto original se não for CNPJ
+    }
+    
     function atualizarSugestoesUnidade() {
         const unidadeInput = document.getElementById("unidadeInput");
         const sugestoes = document.getElementById("sugestoes");
         sugestoes.innerHTML = ""; // Limpa as sugestões anteriores
-
-
-    
     
         const textoInput = removerAcentos(unidadeInput.value.toLowerCase().trim()); // Captura o texto digitado pelo usuário, removendo espaços em branco extras
     
@@ -50,11 +72,13 @@
             });
             sugestoes.appendChild(sugestao);
         });
-
     
         sugestoes.style.display = sugestoes.childNodes.length > 0 ? "block" : "none"; // Exibe ou oculta as sugestões conforme necessário
     }
     
+    document.getElementById("reloadPage").addEventListener("click", function() {
+        location.reload();
+    });
     document.getElementById("reloadPage").addEventListener("click", function() {
         location.reload();
     });
