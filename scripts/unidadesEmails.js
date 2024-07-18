@@ -468,6 +468,7 @@ const unidadesEmails = [
     { unidade: "AMOR SAUDE FORMOSA - CO", email: "amorsaudeformosa.com", cnpj: "41.182.603/0001-39"},
     { unidade: "AMOR SAUDE CACERE - CO", email: "ascaceres.com", cnpj: "41.840.887/0001-03"},
     { unidade: "AMOR SAUDE SAO SEBASTIAO - CO", email: "amssaosebastiao.com", cnpj: "42.269.491/0001-10"},
+    { unidade: "AMOR SAUDE NOSSA SENHORA - CO", email: "amsnossasravarzea.com", cnpj: "55.068.174/0001-88"},
 
 
 ];
