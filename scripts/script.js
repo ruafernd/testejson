@@ -327,7 +327,9 @@
                 servidorInfo.textContent = "Servidor " + unidadeInfo.servidor;
                 servidorInfo.style.textAlign = "center";
                 servidorInfo.style.color = "black";
-                servidorInfo.style.fontSize = "12px";
+                servidorInfo.style.fontSize = "11px";
+                servidorInfo.style.paddingTop = "0px";
+                servidorInfo.style.paddingBottom = "0px";
                 listaLogins.appendChild(servidorInfo);
 
     
