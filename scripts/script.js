@@ -111,7 +111,7 @@
 
   
 
-    const loginsDoutores = [];
+    const listaUsuarios = [];
 
     function selecionarUnidade(unidade) {
         unidadeSelecionada = unidade;
@@ -123,7 +123,7 @@
     }
 
     function limparListaUsuarios() {
-        loginsDoutores.length = 0;
+        listaUsuarios.length = 0;
         atualizarListaLogins();
     }
 
@@ -165,11 +165,11 @@
 
         let senha = `${prefixo !== "Nenhum" ? prefixo.toLowerCase().replace('.', '') : ""}${removerAcentos(primeiroNome)}${removerAcentos(primeiraLetraSegundoNome)}`.toLowerCase();
 
-        // Adiciona o login ao array loginsDoutores
-        loginsDoutores.push({"Usuário": nomeFormatado, "Senha": senha, "Email": emailFinal});
+        // Adiciona o login ao array listaUsuarios
+        listaUsuarios.push({"Usuário": nomeFormatado, "Senha": senha, "Email": emailFinal});
 
         // Adiciona a operação ao histórico de adições
-        historicoAdicoes.push(loginsDoutores.length - 1);
+        historicoAdicoes.push(listaUsuarios.length - 1);
 
         // Atualiza a lista visual de logins
         atualizarListaLogins();
@@ -183,7 +183,7 @@
     function desfazerAdicaoLogin() {
         if (historicoAdicoes.length > 0) {
             const ultimoIndiceAdicao = historicoAdicoes.pop();
-            loginsDoutores.splice(ultimoIndiceAdicao, 1); // Remove o último login adicionado
+            listaUsuarios.splice(ultimoIndiceAdicao, 1); // Remove o último login adicionado
 
             // Atualiza a lista visual de logins após desfazer
             atualizarListaLogins();
@@ -203,23 +203,23 @@
 
     // Função para excluir o último usuário cadastrado
     function excluirTodosLogins() {
-        if (loginsDoutores.length === 0) {
+        if (listaUsuarios.length === 0) {
             alert("Nenhum login para excluir.");
             return;
         }
-        loginsDoutores.length = 0;
+        listaUsuarios.length = 0;
         atualizarListaLogins();
     }
 
     // Função para copiar lista e saída 
     function copiarLista() {
-        if (loginsDoutores.length === 0) {
+        if (listaUsuarios.length === 0) {
             alert("Nenhum login foi adicionado ainda.");
             return;
         }
 
         let lista = "*---------------*\n";
-        for (let login of loginsDoutores) {
+        for (let login of listaUsuarios) {
             lista += `*Usuário: ${login['Usuário']}*\nEmail: ${login['Email']}\nSenha: ${login['Senha']}\n*---------------*\n`;
         }
 
@@ -256,7 +256,7 @@
     // Função para abrir o modal e preencher os campos com os dados existentes
     function editarLogin(index) {
         editIndex = index;
-        const login = loginsDoutores[index];
+        const login = listaUsuarios[index];
 
         document.getElementById("editUsuario").value = login['Usuário'];
         document.getElementById("editEmail").value = login['Email'];
@@ -284,9 +284,9 @@
             const email = document.getElementById("editEmail").value.trim();
             const senha = document.getElementById("editSenha").value.trim();
 
-            loginsDoutores[editIndex]['Usuário'] = usuario;
-            loginsDoutores[editIndex]['Email'] = email;
-            loginsDoutores[editIndex]['Senha'] = senha;
+            listaUsuarios[editIndex]['Usuário'] = usuario;
+            listaUsuarios[editIndex]['Email'] = email;
+            listaUsuarios[editIndex]['Senha'] = senha;
 
             atualizarListaLogins();
             modal.style.display = "none";
@@ -321,7 +321,7 @@
 
         
     
-        if (loginsDoutores.length > 0) {
+        if (listaUsuarios.length > 0) {
             const unidadeInfo = unidadesEmails.find(item => item.unidade === unidadeSelecionada);
             if (unidadeInfo && unidadeInfo.servidor) {
                 let servidorInfo = document.createElement("div");
@@ -339,8 +339,8 @@
             }
         }
     
-        for (let i = 0; i < loginsDoutores.length; i++) {
-            let login = loginsDoutores[i];
+        for (let i = 0; i < listaUsuarios.length; i++) {
+            let login = listaUsuarios[i];
             let loginItem = document.createElement("div");
             loginItem.classList.add("login-item");
     
@@ -441,7 +441,7 @@
     }
     
     function randomizeFirstLetterOfSurname(index) {
-        let login = loginsDoutores[index];
+        let login = listaUsuarios[index];
         let email = login['Email'];
         let senha = login['Senha'];
 
@@ -478,14 +478,14 @@
 
 
     function excluirLogin(index) {
-        loginsDoutores.splice(index, 1);
+        listaUsuarios.splice(index, 1);
         atualizarListaLogins();
     }
 
 
 
     function excluirLogin(index) {
-        loginsDoutores.splice(index, 1);
+        listaUsuarios.splice(index, 1);
         atualizarListaLogins();
     }
 
@@ -503,7 +503,7 @@
             return;
         }
     
-        loginsDoutores.length = 0;
+        listaUsuarios.length = 0;
         atualizarListaLogins();
         unidadeSelecionada = "";
         document.getElementById("unidadeInput").value = "";
@@ -527,7 +527,7 @@
 
 // Função para exportar os logins para CSV e ajustar o tamanho das colunas
 function exportLoginsToCSV() {
-    const logins = loginsDoutores; // Supondo que esta é sua lista de logins
+    const logins = listaUsuarios; 
     let csvContent = [["Usuário", "Email", "Senha"]];
 
     logins.forEach(login => {
