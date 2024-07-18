@@ -1,9 +1,0 @@
-{
-    "CNPJ": {
-        "prefix": "cn",
-        "body": [
-            ", cnpj: \"$1\""
-        ],
-        "description": "Snippet para CNPJ"
-    }
-}

@@ -319,6 +319,22 @@
         const listaLogins = document.getElementById("listaLogins");
         listaLogins.innerHTML = "";
     
+        if (loginsDoutores.length > 0) {
+            const unidadeInfo = unidadesEmails.find(item => item.unidade === unidadeSelecionada);
+            if (unidadeInfo && unidadeInfo.servidor) {
+                let servidorInfo = document.createElement("div");
+                servidorInfo.classList.add("servidor-info");
+                servidorInfo.textContent = "Servidor " + unidadeInfo.servidor;
+                servidorInfo.style.textAlign = "center";
+                servidorInfo.style.color = "black";
+                servidorInfo.style.fontSize = "12px";
+                listaLogins.appendChild(servidorInfo);
+
+    
+                
+            }
+        }
+    
         for (let i = 0; i < loginsDoutores.length; i++) {
             let login = loginsDoutores[i];
             let loginItem = document.createElement("div");
@@ -407,7 +423,6 @@
             let senhaInfoContainer = document.createElement("div");
             senhaInfoContainer.classList.add("user-info-container");
             senhaInfoContainer.appendChild(senhaInfo);
-            // senhaInfoContainer.appendChild(copySenhaIcon); // Remover o ícone de copiar senha daqui
     
             loginItem.appendChild(userInfoContainer);
             loginItem.appendChild(emailInfoContainer);
@@ -420,6 +435,7 @@
             listaLogins.appendChild(loginItem);
         }
     }
+    
     function randomizeFirstLetterOfSurname(index) {
         let login = loginsDoutores[index];
         let email = login['Email'];
