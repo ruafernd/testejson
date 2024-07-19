@@ -374,7 +374,7 @@
             copySenhaIcon.classList.add("copy-icon");
             copySenhaIcon.textContent = "content_copy";
             copySenhaIcon.addEventListener("click", function() {
-                const userInfo = `*---------------*\nUsuário: ${login['Usuário']}\nEmail: ${login['Email']}\nSenha: ${login['Senha']}`;
+                const userInfo = `*---------------*\n*Usuário: ${login['Usuário']}*\nEmail: ${login['Email']}\nSenha: ${login['Senha']}`;
                 copyToClipboard(userInfo, copySenhaIcon);
             });
     
