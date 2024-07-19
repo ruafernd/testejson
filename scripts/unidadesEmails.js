@@ -89,7 +89,7 @@ const unidadesEmails = [
     { unidade: "PET DE TODOS BARREIROS - GERAL2", email: "petdetodosbarreiros.com", cnpj: "45.855.528/0001-08", servidor: "Geral2"},
     { unidade: "MAIS PET CAMPINAS - GERAL2", email: "maispetcampinas.com", cnpj: "46.803.033/0001-70", servidor: "Geral2"},
     { unidade: "MAIS PET BRASILIA - GERAL2", email: "maispetbrasilia.com", cnpj: "45.633.200/0001-10", servidor: "Geral2"},
-    { unidade: "HNL RADIOLOGIA - GERAL2", email: "hnlradiologia.com", cnpj: "09.112.236/0001-94", servidor: "Geral2"},
+    { unidade: "HNL RADIOLOGIA - GERAL2", email: "radiohnl.com", cnpj: "09.112.236/0001-94", servidor: "Geral2"},
     { unidade: "HNL URGENCIA - GERAL2", email: "hnlurgencia.com", cnpj: "09.112.236/0001-94", servidor: "Geral2"},
     { unidade: "CLINICA DIGEST CG - GERAL2", email: "clinicadigest.com", cnpj: "17.963.868/0001-04", servidor: "Geral2"},
     { unidade: "PREZECOR SANTANA - GERAL2", email: "prezecor.com", cnpj: "02.135.477/0001-00", servidor: "Geral2"},
