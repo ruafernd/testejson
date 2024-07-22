@@ -169,6 +169,7 @@ const unidadesEmails = [
     { unidade: "AMOR SAUDE CUBATAO - SP3", email: "amscubatao.com", cnpj: "45.582.768/0001-59", servidor: "SP3"},
     { unidade: "AMOR SAUDE FERRAZ DE VASCONCELOS - SP3", email: "amorsaudefvasconcelos.com", cnpj: "11.842.769/0001-73", servidor: "SP3"},
     { unidade: "AMOR SAUDE OSASCO CENTRO - SP3", email: "asosascocentro.com", cnpj: "24.857.834/0001-86", servidor: "SP3"},
+    { unidade: "AMOR SAUDE GUARULHOS JARDIM - SP3", email: "amsguarulhosjardim.com", cnpj: "12.022.642/0002-51", servidor: "SP3"},
     { unidade: "AMOR SAUDE GUAIANASES - SP3", email: "amsguaianases.com", cnpj: "36.008.463/0001-47", servidor: "SP3"},
     { unidade: "AMOR SAUDE SÃO JOÃO DA BOA VISTA - SP3", email: "amssjboavista.com", cnpj: "51.197.346/0001-62", servidor: "SP3"},
     { unidade: "AMOR SAUDE AMERICANA - SP3", email: "asamericana.com", cnpj: "09.377.220/0001-03", servidor: "SP3"},
