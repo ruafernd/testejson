@@ -1,3 +1,6 @@
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a6f81f72-a851-4fb4-a757-946dabbfb01a/deploy-status)](https://app.netlify.com/sites/testeson/deploys)
+
 # Sistema de Criação de Logins - Atendimento Inteligente
 
 Este sistema foi desenvolvido para facilitar a criação e gerenciamento de logins para unidades do atendimento inteligente, substituindo o uso de bloco de notas e simplificando o acesso aos emails associados a cada unidade.
